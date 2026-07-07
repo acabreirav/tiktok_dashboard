@@ -22,6 +22,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from apify_client import ApifyError, correr_actor
+from normalize import guardar_snapshot, normalizar_items
 
 ROOT = Path(__file__).resolve().parent.parent
 RUTA_CUENTAS = ROOT / "config" / "accounts.json"
@@ -97,13 +98,19 @@ def main() -> int:
     ruta_salida.write_text(json.dumps(items, ensure_ascii=False, indent=2),
                            encoding="utf-8")
 
-    # Resumen para inspección: cuántos items y qué campos trae el primero.
-    print(f"\n[ok] {len(items)} items guardados en {ruta_salida.relative_to(ROOT)}")
-    if items and isinstance(items[0], dict):
-        print("Campos del primer item (para escribir el normalizador):")
-        print("  " + ", ".join(sorted(items[0].keys())))
-    print("\nSiguiente paso: inspeccionar este JSON y escribir el normalizador "
-          "al esquema interno (CLAUDE.md §5).")
+    print(f"[ok] {len(items)} items crudos guardados en {ruta_salida.relative_to(ROOT)}")
+
+    # Normalizar al esquema interno y guardar el snapshot del día.
+    fecha_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    snapshot = normalizar_items(items, fecha_iso)
+    ruta_snapshot = guardar_snapshot(snapshot, fecha_iso[:10])
+
+    print(f"[ok] snapshot normalizado: {ruta_snapshot.relative_to(ROOT)}")
+    for cuenta in snapshot["accounts"]:
+        print(f"  @{cuenta['handle']}: {cuenta['followers']:,} seguidores, "
+              f"{len(cuenta['videos'])} videos")
+    for error in snapshot["errors"]:
+        print(f"  [aviso] {error}")
     return 0
 
 
