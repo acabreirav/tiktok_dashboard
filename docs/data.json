@@ -1,58 +1,16 @@
 {
-  "generatedAt": "2026-07-07T15:38:22Z",
+  "generatedAt": "2026-07-07T15:53:26Z",
   "snapshots": {
-    "count": 2,
+    "count": 3,
     "first": "2026-07-07T03:39:00Z",
-    "last": "2026-07-07T15:37:13Z"
+    "last": "2026-07-07T15:53:26Z"
   },
   "windows": {
     "7": {
       "days": 7,
-      "snapshotsEnVentana": 2,
+      "snapshotsEnVentana": 3,
       "hasGrowth": true,
       "accounts": [
-        {
-          "handle": "gonzalowinter",
-          "verified": false,
-          "followers": 193700,
-          "crecimiento": null,
-          "aceleracion": {
-            "ratio": null,
-            "estado": "sin datos"
-          },
-          "engagement": 13.538235365439643,
-          "velocidad": null,
-          "cadencia": 2.0,
-          "viewsPorSeguidor": 0.436241610738255,
-          "breakouts": [],
-          "serieSeguidores": [
-            [
-              "2026-07-07T15:37:13Z",
-              193700
-            ]
-          ]
-        },
-        {
-          "handle": "diego_ibanezc",
-          "verified": false,
-          "followers": 86800,
-          "crecimiento": null,
-          "aceleracion": {
-            "ratio": null,
-            "estado": "sin datos"
-          },
-          "engagement": 12.50882197459551,
-          "velocidad": null,
-          "cadencia": 2.0,
-          "viewsPorSeguidor": 0.09093894009216591,
-          "breakouts": [],
-          "serieSeguidores": [
-            [
-              "2026-07-07T15:37:13Z",
-              86800
-            ]
-          ]
-        },
         {
           "handle": "gaelyeomans",
           "verified": false,
@@ -70,21 +28,25 @@
             {
               "id": "7657676919520972052",
               "caption": "Los gustitos de las 10 acusaciones constitucionales del Partido Republicano le ha costado al Estado de Chile más de 2.200 millones de pesos solo en sueldo de funcionarios y dietas parlamentarias. \nEspero que algún día se pongan serios y trabajen realmente por las necesidades de Chile. ",
-              "views": 9459,
-              "ratio": 4.599562363238512,
+              "views": 9461,
+              "ratio": 4.600534889375152,
               "postedAt": "2026-07-01T21:37:37.000Z"
             },
             {
               "id": "7658306356058918164",
               "caption": "Ya parece costumbre que el Gobierno de Kast diga algo y después se arrepienta. Quitarle el Estadio Nacional a BTS ya es un absurdo.",
-              "views": 6309,
-              "ratio": 3.0678336980306344,
+              "views": 6310,
+              "ratio": 3.0683199610989544,
               "postedAt": "2026-07-03T14:20:03.000Z"
             }
           ],
           "serieSeguidores": [
             [
               "2026-07-07T15:37:13Z",
+              31500
+            ],
+            [
+              "2026-07-07T15:53:26Z",
               31500
             ]
           ]
@@ -107,79 +69,10 @@
             [
               "2026-07-07T15:37:13Z",
               12500
-            ]
-          ]
-        }
-      ],
-      "insights": [
-        "Todavía hay una sola foto: las tasas de crecimiento aparecerán cuando exista un segundo snapshot (el pipeline las calcula solo).",
-        "Breakout en @gaelyeomans: un video con 9,459 views, 4.6× la mediana de la cuenta.",
-        "El engagement más alto es de @gonzalowinter: 13.54% mediano por video."
-      ],
-      "alertas": [
-        {
-          "tipo": "breakout",
-          "handle": "gaelyeomans",
-          "texto": "Video breakout: 9,459 views (4.6× su mediana)"
-        },
-        {
-          "tipo": "breakout",
-          "handle": "gaelyeomans",
-          "texto": "Video breakout: 6,309 views (3.1× su mediana)"
-        }
-      ],
-      "titulares": {
-        "mayorCrecimiento": null,
-        "breakoutMasCaliente": {
-          "handle": "gaelyeomans",
-          "views": 9459,
-          "ratio": 4.599562363238512
-        },
-        "mayorAceleracion": null,
-        "rindeSobreTamano": {
-          "handle": "conyschons",
-          "viewsPorSeguidor": 0.46864
-        }
-      }
-    },
-    "14": {
-      "days": 14,
-      "snapshotsEnVentana": 2,
-      "hasGrowth": true,
-      "accounts": [
-        {
-          "handle": "gonzalowinter",
-          "verified": false,
-          "followers": 193700,
-          "crecimiento": null,
-          "aceleracion": {
-            "ratio": null,
-            "estado": "sin datos"
-          },
-          "engagement": 13.538235365439643,
-          "velocidad": null,
-          "cadencia": 3.0,
-          "viewsPorSeguidor": 0.436241610738255,
-          "breakouts": [
-            {
-              "id": "7655346656614927623",
-              "caption": "Yo sé que en este hemiciclo existen diputados racionales y capaces de ponderar posiciones. La pregunta es por qué adoptan esta forma de legislar que, a simple vista, no tiene sentido.",
-              "views": 294600,
-              "ratio": 3.486390532544379,
-              "postedAt": "2026-06-25T14:54:58.000Z"
-            },
-            {
-              "id": "7654792219739573524",
-              "caption": "El Ministerio de Hacienda, que solía ser una institución seria, se ha prestado para una Acusación Constitucional cuyo efecto más grave es poner en duda las finanzas de nuestro país ante el mundo.",
-              "views": 287600,
-              "ratio": 3.403550295857988,
-              "postedAt": "2026-06-24T03:03:23.000Z"
-            }
-          ],
-          "serieSeguidores": [
+            ],
             [
-              "2026-07-07T15:37:13Z",
-              193700
+              "2026-07-07T15:53:26Z",
+              12500
             ]
           ]
         },
@@ -194,16 +87,82 @@
           },
           "engagement": 12.50882197459551,
           "velocidad": null,
-          "cadencia": 1.5,
-          "viewsPorSeguidor": 0.09093894009216591,
+          "cadencia": 2.0,
+          "viewsPorSeguidor": 0.0909447004608295,
           "breakouts": [],
           "serieSeguidores": [
             [
               "2026-07-07T15:37:13Z",
               86800
+            ],
+            [
+              "2026-07-07T15:53:26Z",
+              86800
             ]
           ]
         },
+        {
+          "handle": "gonzalowinter",
+          "verified": false,
+          "followers": 193700,
+          "crecimiento": null,
+          "aceleracion": {
+            "ratio": null,
+            "estado": "sin datos"
+          },
+          "engagement": 13.538235365439643,
+          "velocidad": null,
+          "cadencia": 2.0,
+          "viewsPorSeguidor": 0.436241610738255,
+          "breakouts": [],
+          "serieSeguidores": [
+            [
+              "2026-07-07T15:37:13Z",
+              193700
+            ],
+            [
+              "2026-07-07T15:53:26Z",
+              193700
+            ]
+          ]
+        }
+      ],
+      "insights": [
+        "Todavía hay una sola foto: las tasas de crecimiento aparecerán cuando exista un segundo snapshot (el pipeline las calcula solo).",
+        "Breakout en @gaelyeomans: un video con 9,461 views, 4.6× la mediana de la cuenta.",
+        "El engagement más alto es de @gonzalowinter: 13.54% mediano por video."
+      ],
+      "alertas": [
+        {
+          "tipo": "breakout",
+          "handle": "gaelyeomans",
+          "texto": "Video breakout: 9,461 views (4.6× su mediana)"
+        },
+        {
+          "tipo": "breakout",
+          "handle": "gaelyeomans",
+          "texto": "Video breakout: 6,310 views (3.1× su mediana)"
+        }
+      ],
+      "titulares": {
+        "mayorCrecimiento": null,
+        "breakoutMasCaliente": {
+          "handle": "gaelyeomans",
+          "views": 9461,
+          "ratio": 4.600534889375152
+        },
+        "mayorAceleracion": null,
+        "rindeSobreTamano": {
+          "handle": "conyschons",
+          "viewsPorSeguidor": 0.46864
+        }
+      }
+    },
+    "14": {
+      "days": 14,
+      "snapshotsEnVentana": 3,
+      "hasGrowth": true,
+      "accounts": [
         {
           "handle": "gaelyeomans",
           "verified": false,
@@ -228,21 +187,25 @@
             {
               "id": "7657676919520972052",
               "caption": "Los gustitos de las 10 acusaciones constitucionales del Partido Republicano le ha costado al Estado de Chile más de 2.200 millones de pesos solo en sueldo de funcionarios y dietas parlamentarias. \nEspero que algún día se pongan serios y trabajen realmente por las necesidades de Chile. ",
-              "views": 9459,
-              "ratio": 4.599562363238512,
+              "views": 9461,
+              "ratio": 4.600534889375152,
               "postedAt": "2026-07-01T21:37:37.000Z"
             },
             {
               "id": "7658306356058918164",
               "caption": "Ya parece costumbre que el Gobierno de Kast diga algo y después se arrepienta. Quitarle el Estadio Nacional a BTS ya es un absurdo.",
-              "views": 6309,
-              "ratio": 3.0678336980306344,
+              "views": 6310,
+              "ratio": 3.0683199610989544,
               "postedAt": "2026-07-03T14:20:03.000Z"
             }
           ],
           "serieSeguidores": [
             [
               "2026-07-07T15:37:13Z",
+              31500
+            ],
+            [
+              "2026-07-07T15:53:26Z",
               31500
             ]
           ]
@@ -273,28 +236,87 @@
             [
               "2026-07-07T15:37:13Z",
               12500
+            ],
+            [
+              "2026-07-07T15:53:26Z",
+              12500
+            ]
+          ]
+        },
+        {
+          "handle": "diego_ibanezc",
+          "verified": false,
+          "followers": 86800,
+          "crecimiento": null,
+          "aceleracion": {
+            "ratio": null,
+            "estado": "sin datos"
+          },
+          "engagement": 12.50882197459551,
+          "velocidad": null,
+          "cadencia": 1.5,
+          "viewsPorSeguidor": 0.0909447004608295,
+          "breakouts": [],
+          "serieSeguidores": [
+            [
+              "2026-07-07T15:37:13Z",
+              86800
+            ],
+            [
+              "2026-07-07T15:53:26Z",
+              86800
+            ]
+          ]
+        },
+        {
+          "handle": "gonzalowinter",
+          "verified": false,
+          "followers": 193700,
+          "crecimiento": null,
+          "aceleracion": {
+            "ratio": null,
+            "estado": "sin datos"
+          },
+          "engagement": 13.538235365439643,
+          "velocidad": null,
+          "cadencia": 3.0,
+          "viewsPorSeguidor": 0.436241610738255,
+          "breakouts": [
+            {
+              "id": "7655346656614927623",
+              "caption": "Yo sé que en este hemiciclo existen diputados racionales y capaces de ponderar posiciones. La pregunta es por qué adoptan esta forma de legislar que, a simple vista, no tiene sentido.",
+              "views": 294700,
+              "ratio": 3.4875739644970416,
+              "postedAt": "2026-06-25T14:54:58.000Z"
+            },
+            {
+              "id": "7654792219739573524",
+              "caption": "El Ministerio de Hacienda, que solía ser una institución seria, se ha prestado para una Acusación Constitucional cuyo efecto más grave es poner en duda las finanzas de nuestro país ante el mundo.",
+              "views": 287700,
+              "ratio": 3.404733727810651,
+              "postedAt": "2026-06-24T03:03:23.000Z"
+            }
+          ],
+          "serieSeguidores": [
+            [
+              "2026-07-07T15:37:13Z",
+              193700
+            ],
+            [
+              "2026-07-07T15:53:26Z",
+              193700
             ]
           ]
         }
       ],
       "insights": [
         "Todavía hay una sola foto: las tasas de crecimiento aparecerán cuando exista un segundo snapshot (el pipeline las calcula solo).",
-        "Breakout en @gonzalowinter: un video con 294,600 views, 3.5× la mediana de la cuenta.",
         "Breakout en @gaelyeomans: un video con 10,700 views, 5.2× la mediana de la cuenta.",
         "Breakout en @conyschons: un video con 1,300,000 views, 221.9× la mediana de la cuenta.",
+        "Breakout en @gonzalowinter: un video con 294,700 views, 3.5× la mediana de la cuenta.",
         "El engagement más alto es de @gonzalowinter: 13.54% mediano por video."
       ],
       "alertas": [
-        {
-          "tipo": "breakout",
-          "handle": "gonzalowinter",
-          "texto": "Video breakout: 294,600 views (3.5× su mediana)"
-        },
-        {
-          "tipo": "breakout",
-          "handle": "gonzalowinter",
-          "texto": "Video breakout: 287,600 views (3.4× su mediana)"
-        },
         {
           "tipo": "breakout",
           "handle": "gaelyeomans",
@@ -303,17 +325,27 @@
         {
           "tipo": "breakout",
           "handle": "gaelyeomans",
-          "texto": "Video breakout: 9,459 views (4.6× su mediana)"
+          "texto": "Video breakout: 9,461 views (4.6× su mediana)"
         },
         {
           "tipo": "breakout",
           "handle": "gaelyeomans",
-          "texto": "Video breakout: 6,309 views (3.1× su mediana)"
+          "texto": "Video breakout: 6,310 views (3.1× su mediana)"
         },
         {
           "tipo": "breakout",
           "handle": "conyschons",
           "texto": "Video breakout: 1,300,000 views (221.9× su mediana)"
+        },
+        {
+          "tipo": "breakout",
+          "handle": "gonzalowinter",
+          "texto": "Video breakout: 294,700 views (3.5× su mediana)"
+        },
+        {
+          "tipo": "breakout",
+          "handle": "gonzalowinter",
+          "texto": "Video breakout: 287,700 views (3.4× su mediana)"
         }
       ],
       "titulares": {
@@ -332,73 +364,9 @@
     },
     "30": {
       "days": 30,
-      "snapshotsEnVentana": 2,
+      "snapshotsEnVentana": 3,
       "hasGrowth": true,
       "accounts": [
-        {
-          "handle": "gonzalowinter",
-          "verified": false,
-          "followers": 193700,
-          "crecimiento": null,
-          "aceleracion": {
-            "ratio": null,
-            "estado": "sin datos"
-          },
-          "engagement": 13.538235365439643,
-          "velocidad": null,
-          "cadencia": 2.3333333333333335,
-          "viewsPorSeguidor": 0.436241610738255,
-          "breakouts": [
-            {
-              "id": "7652758654940204289",
-              "caption": "Nadie ha pedido cambiarle el nombre a la Cámara de Diputados y Diputadas, esa es una idea del señor Bobadilla. Fracasa, por lo demás.",
-              "views": 548900,
-              "ratio": 6.495857988165681,
-              "postedAt": "2026-06-18T15:32:15.000Z"
-            },
-            {
-              "id": "7655346656614927623",
-              "caption": "Yo sé que en este hemiciclo existen diputados racionales y capaces de ponderar posiciones. La pregunta es por qué adoptan esta forma de legislar que, a simple vista, no tiene sentido.",
-              "views": 294600,
-              "ratio": 3.486390532544379,
-              "postedAt": "2026-06-25T14:54:58.000Z"
-            },
-            {
-              "id": "7654792219739573524",
-              "caption": "El Ministerio de Hacienda, que solía ser una institución seria, se ha prestado para una Acusación Constitucional cuyo efecto más grave es poner en duda las finanzas de nuestro país ante el mundo.",
-              "views": 287600,
-              "ratio": 3.403550295857988,
-              "postedAt": "2026-06-24T03:03:23.000Z"
-            }
-          ],
-          "serieSeguidores": [
-            [
-              "2026-07-07T15:37:13Z",
-              193700
-            ]
-          ]
-        },
-        {
-          "handle": "diego_ibanezc",
-          "verified": false,
-          "followers": 86800,
-          "crecimiento": null,
-          "aceleracion": {
-            "ratio": null,
-            "estado": "sin datos"
-          },
-          "engagement": 12.50882197459551,
-          "velocidad": null,
-          "cadencia": 1.1666666666666667,
-          "viewsPorSeguidor": 0.09093894009216591,
-          "breakouts": [],
-          "serieSeguidores": [
-            [
-              "2026-07-07T15:37:13Z",
-              86800
-            ]
-          ]
-        },
         {
           "handle": "gaelyeomans",
           "verified": false,
@@ -423,21 +391,25 @@
             {
               "id": "7657676919520972052",
               "caption": "Los gustitos de las 10 acusaciones constitucionales del Partido Republicano le ha costado al Estado de Chile más de 2.200 millones de pesos solo en sueldo de funcionarios y dietas parlamentarias. \nEspero que algún día se pongan serios y trabajen realmente por las necesidades de Chile. ",
-              "views": 9459,
-              "ratio": 4.599562363238512,
+              "views": 9461,
+              "ratio": 4.600534889375152,
               "postedAt": "2026-07-01T21:37:37.000Z"
             },
             {
               "id": "7658306356058918164",
               "caption": "Ya parece costumbre que el Gobierno de Kast diga algo y después se arrepienta. Quitarle el Estadio Nacional a BTS ya es un absurdo.",
-              "views": 6309,
-              "ratio": 3.0678336980306344,
+              "views": 6310,
+              "ratio": 3.0683199610989544,
               "postedAt": "2026-07-03T14:20:03.000Z"
             }
           ],
           "serieSeguidores": [
             [
               "2026-07-07T15:37:13Z",
+              31500
+            ],
+            [
+              "2026-07-07T15:53:26Z",
               31500
             ]
           ]
@@ -475,33 +447,94 @@
             [
               "2026-07-07T15:37:13Z",
               12500
+            ],
+            [
+              "2026-07-07T15:53:26Z",
+              12500
+            ]
+          ]
+        },
+        {
+          "handle": "diego_ibanezc",
+          "verified": false,
+          "followers": 86800,
+          "crecimiento": null,
+          "aceleracion": {
+            "ratio": null,
+            "estado": "sin datos"
+          },
+          "engagement": 12.50882197459551,
+          "velocidad": null,
+          "cadencia": 1.1666666666666667,
+          "viewsPorSeguidor": 0.0909447004608295,
+          "breakouts": [],
+          "serieSeguidores": [
+            [
+              "2026-07-07T15:37:13Z",
+              86800
+            ],
+            [
+              "2026-07-07T15:53:26Z",
+              86800
+            ]
+          ]
+        },
+        {
+          "handle": "gonzalowinter",
+          "verified": false,
+          "followers": 193700,
+          "crecimiento": null,
+          "aceleracion": {
+            "ratio": null,
+            "estado": "sin datos"
+          },
+          "engagement": 13.538235365439643,
+          "velocidad": null,
+          "cadencia": 2.3333333333333335,
+          "viewsPorSeguidor": 0.436241610738255,
+          "breakouts": [
+            {
+              "id": "7652758654940204289",
+              "caption": "Nadie ha pedido cambiarle el nombre a la Cámara de Diputados y Diputadas, esa es una idea del señor Bobadilla. Fracasa, por lo demás.",
+              "views": 549000,
+              "ratio": 6.497041420118343,
+              "postedAt": "2026-06-18T15:32:15.000Z"
+            },
+            {
+              "id": "7655346656614927623",
+              "caption": "Yo sé que en este hemiciclo existen diputados racionales y capaces de ponderar posiciones. La pregunta es por qué adoptan esta forma de legislar que, a simple vista, no tiene sentido.",
+              "views": 294700,
+              "ratio": 3.4875739644970416,
+              "postedAt": "2026-06-25T14:54:58.000Z"
+            },
+            {
+              "id": "7654792219739573524",
+              "caption": "El Ministerio de Hacienda, que solía ser una institución seria, se ha prestado para una Acusación Constitucional cuyo efecto más grave es poner en duda las finanzas de nuestro país ante el mundo.",
+              "views": 287700,
+              "ratio": 3.404733727810651,
+              "postedAt": "2026-06-24T03:03:23.000Z"
+            }
+          ],
+          "serieSeguidores": [
+            [
+              "2026-07-07T15:37:13Z",
+              193700
+            ],
+            [
+              "2026-07-07T15:53:26Z",
+              193700
             ]
           ]
         }
       ],
       "insights": [
         "Todavía hay una sola foto: las tasas de crecimiento aparecerán cuando exista un segundo snapshot (el pipeline las calcula solo).",
-        "Breakout en @gonzalowinter: un video con 548,900 views, 6.5× la mediana de la cuenta.",
         "Breakout en @gaelyeomans: un video con 10,700 views, 5.2× la mediana de la cuenta.",
         "Breakout en @conyschons: un video con 1,300,000 views, 221.9× la mediana de la cuenta.",
+        "Breakout en @gonzalowinter: un video con 549,000 views, 6.5× la mediana de la cuenta.",
         "El engagement más alto es de @gonzalowinter: 13.54% mediano por video."
       ],
       "alertas": [
-        {
-          "tipo": "breakout",
-          "handle": "gonzalowinter",
-          "texto": "Video breakout: 548,900 views (6.5× su mediana)"
-        },
-        {
-          "tipo": "breakout",
-          "handle": "gonzalowinter",
-          "texto": "Video breakout: 294,600 views (3.5× su mediana)"
-        },
-        {
-          "tipo": "breakout",
-          "handle": "gonzalowinter",
-          "texto": "Video breakout: 287,600 views (3.4× su mediana)"
-        },
         {
           "tipo": "breakout",
           "handle": "gaelyeomans",
@@ -510,12 +543,12 @@
         {
           "tipo": "breakout",
           "handle": "gaelyeomans",
-          "texto": "Video breakout: 9,459 views (4.6× su mediana)"
+          "texto": "Video breakout: 9,461 views (4.6× su mediana)"
         },
         {
           "tipo": "breakout",
           "handle": "gaelyeomans",
-          "texto": "Video breakout: 6,309 views (3.1× su mediana)"
+          "texto": "Video breakout: 6,310 views (3.1× su mediana)"
         },
         {
           "tipo": "breakout",
@@ -526,6 +559,21 @@
           "tipo": "breakout",
           "handle": "conyschons",
           "texto": "Video breakout: 118,600 views (20.2× su mediana)"
+        },
+        {
+          "tipo": "breakout",
+          "handle": "gonzalowinter",
+          "texto": "Video breakout: 549,000 views (6.5× su mediana)"
+        },
+        {
+          "tipo": "breakout",
+          "handle": "gonzalowinter",
+          "texto": "Video breakout: 294,700 views (3.5× su mediana)"
+        },
+        {
+          "tipo": "breakout",
+          "handle": "gonzalowinter",
+          "texto": "Video breakout: 287,700 views (3.4× su mediana)"
         }
       ],
       "titulares": {
