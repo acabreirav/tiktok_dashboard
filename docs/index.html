@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Radar de Tracción · Legisladores RM en TikTok</title>
+<title>Radar de Tracción · Legisladores RM en redes sociales</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>📡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -149,13 +149,21 @@ ul.lecturas li::before{content:"▸";position:absolute;left:0;color:var(--tinta)
   max-width:280px;box-shadow:0 4px 12px rgba(26,34,51,.12)}
 #tooltip strong{color:var(--tinta);display:block}
 footer{margin-top:36px;color:var(--tinta-3);font-size:12px;text-align:center}
+
+/* chip de fuente del dato: toda métrica declara de qué red viene */
+.fuente{
+  display:inline-block;font-size:10px;font-family:"JetBrains Mono",monospace;
+  border:1px solid var(--borde);color:var(--tinta-3);padding:0 7px;
+  border-radius:10px;margin-left:6px;vertical-align:1px;letter-spacing:.3px;
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Radar de Tracción · Legisladores RM en TikTok</h1>
-  <div class="sub">D10 · D11 · D13 · Senado RM — período 2026-2030 ·
+  <h1>Radar de Tracción · Legisladores RM en redes sociales</h1>
+  <div class="sub">RM completa (D8-D14 + Senado) — período 2026-2030 ·
+    fuentes: TikTok (audiencia + contenido) · Instagram (audiencia) ·
     <span class="mono" id="meta-fechas">cargando…</span></div>
   <!-- una sola fila de filtros: gobierna TODAS las secciones -->
   <div class="filtros" role="group" aria-label="Filtros">
@@ -164,6 +172,11 @@ footer{margin-top:36px;color:var(--tinta-3);font-size:12px;text-align:center}
     <button class="vent" data-dias="14">14d</button>
     <button class="vent" data-dias="30">30d</button>
     <span class="etq" style="margin-left:8px">Filtrar</span>
+    <select id="f-red">
+      <option value="global">Red: global</option>
+      <option value="tiktok">Red: TikTok</option>
+      <option value="instagram">Red: Instagram</option>
+    </select>
     <select id="f-sector"><option value="">Sector: todos</option></select>
     <select id="f-coalicion"><option value="">Coalición: todas</option></select>
     <select id="f-partido"><option value="">Partido: todos</option></select>
@@ -243,7 +256,14 @@ const apellido = nombre => nombre.split(" ").pop();
 const colorDe = leg => COLOR[leg?.sector] || COLOR.neutro;
 
 let DATA = null;
-let estado = {ventana:"7", sector:"", coalicion:"", partido:"", territorio:"", sel:null};
+let estado = {ventana:"7", red:"global", sector:"", coalicion:"", partido:"", territorio:"", sel:null};
+
+/* Qué aporta cada fuente (para declararlo en el panel):
+   TikTok = audiencia + contenido (views, engagement, velocidad, breakouts).
+   Instagram = SOLO audiencia (seguidores, crecimiento) — es perfil-only.
+   Por eso las secciones de contenido no existen en modo Instagram. */
+const CONTENIDO_DISPONIBLE = () => estado.red !== "instagram";
+const FUENTE_CONTENIDO = "TikTok";
 
 /* ---------- tooltip ---------- */
 const tip = $("#tooltip");
@@ -263,25 +283,79 @@ function svgEl(tag, attrs){
   return el;
 }
 
-/* ---------- selección filtrada ---------- */
-function cuentasFiltradas(){
+/* ---------- selección filtrada ----------
+   Unidad = un legislador con su presencia en cada red. Une el dato de TikTok
+   (que trae contenido) con el de Instagram (solo audiencia). Incluye a los
+   legisladores SIN TikTok pero CON IG, que no viven en w.accounts. */
+function pasaFiltrosMeta(l){
+  return (!estado.sector || l.sector === estado.sector) &&
+         (!estado.coalicion || l.coalicion === estado.coalicion) &&
+         (!estado.partido || l.partido === estado.partido) &&
+         (!estado.territorio || l.territorio === estado.territorio);
+}
+
+/* audiencia (seguidores + crecimiento) según la red elegida.
+   Global = suma de ambas redes; el crecimiento combina los deltas absolutos. */
+function audiencia(u){
+  const tt = u.tiktok, ig = u.ig;
+  if (estado.red === "tiktok")
+    return tt ? {followers: tt.followers, crecimiento: tt.crecimiento, fuente: "TikTok"} : null;
+  if (estado.red === "instagram")
+    return ig ? {followers: ig.followers, crecimiento: ig.crecimiento, fuente: "IG"} : null;
+  // global
+  if (!tt && !ig) return null;
+  const followers = (tt?.followers ?? 0) + (ig?.followers ?? 0);
+  let absSum = 0, hayCrec = false;
+  for (const src of [tt, ig])
+    if (src?.crecimiento?.absoluto != null){ absSum += src.crecimiento.absoluto; hayCrec = true; }
+  const base = followers - (hayCrec ? absSum : 0);
+  return {
+    followers,
+    crecimiento: hayCrec
+      ? {absoluto: absSum, porcentual: base > 0 ? absSum / base * 100 : null} : null,
+    fuente: [tt && "TikTok", ig && "IG"].filter(Boolean).join("+"),
+  };
+}
+
+function unidadLegislador(l){
   const w = DATA.windows[estado.ventana];
-  return w.accounts.filter(c => {
-    const l = c.legislador;
-    if (!l) return false;                       // cuentas históricas fuera de la base
-    if (estado.sector && l.sector !== estado.sector) return false;
-    if (estado.coalicion && l.coalicion !== estado.coalicion) return false;
-    if (estado.partido && l.partido !== estado.partido) return false;
-    if (estado.territorio && l.territorio !== estado.territorio) return false;
-    return true;
-  });
+  const tiktok = l.handle ? w.accounts.find(c => c.handle === l.handle) || null : null;
+  const ig = l.handleInstagram ? (w.instagram || {})[l.handleInstagram] || null : null;
+  const u = {
+    legislador: l, nombre: l.nombre, handle: l.handle, tiktok, ig, instagram: ig,
+    // campos de CONTENIDO (siempre TikTok; null-safe para quien no lo tiene)
+    crecimiento: tiktok?.crecimiento ?? null,      // crecimiento TikTok (para momentum)
+    velocidad: tiktok?.velocidad ?? null,
+    engagement: tiktok?.engagement ?? null,
+    deltaViews: tiktok?.deltaViews ?? null,
+    cadencia: tiktok?.cadencia ?? null,
+    viewsPorSeguidor: tiktok?.viewsPorSeguidor ?? null,
+    aceleracion: tiktok?.aceleracion ?? null,
+    breakouts: tiktok?.breakouts ?? [],
+    ultimaPublicacion: tiktok?.ultimaPublicacion ?? null,
+    videosTop: tiktok?.videosTop ?? [],
+    serieSeguidores: tiktok?.serieSeguidores ?? [],
+    verified: tiktok?.verified ?? false,
+  };
+  u.aud = audiencia(u);   // audiencia resuelta por la red activa
+  return u;
+}
+
+function cuentasFiltradas(){
+  const us = DATA.roster.filter(pasaFiltrosMeta).map(unidadLegislador);
+  return us.filter(u =>
+    estado.red === "tiktok" ? !!u.tiktok
+    : estado.red === "instagram" ? !!u.ig
+    : (!!u.tiktok || !!u.ig));
 }
 function rosterFiltrado(){
-  return DATA.roster.filter(l =>
-    (!estado.sector || l.sector === estado.sector) &&
-    (!estado.coalicion || l.coalicion === estado.coalicion) &&
-    (!estado.partido || l.partido === estado.partido) &&
-    (!estado.territorio || l.territorio === estado.territorio));
+  return DATA.roster.filter(pasaFiltrosMeta);
+}
+/* ¿el legislador tiene cuenta en la red activa? (para cobertura y terreno cedido) */
+function tieneCuentaEnRed(l){
+  if (estado.red === "tiktok") return !!l.handle;
+  if (estado.red === "instagram") return !!l.handleInstagram;
+  return !!l.handle || !!l.handleInstagram;
 }
 
 /* ---------- agregados por grupo (group-by en JS; métricas base en Python) ---------- */
@@ -292,59 +366,76 @@ const mediana = vs => {
   return l.length % 2 ? l[m] : (l[m-1]+l[m])/2;
 };
 function agregar(cuentas, roster){
-  const conCrec = cuentas.filter(c => c.crecimiento && c.crecimiento.absoluto != null);
-  const abs = conCrec.length ? conCrec.reduce((s,c) => s+c.crecimiento.absoluto, 0) : null;
-  const base = conCrec.reduce((s,c) => s + c.followers - c.crecimiento.absoluto, 0);
-  const sov = cuentas.some(c => c.deltaViews != null)
+  const conCrec = cuentas.filter(c => c.aud?.crecimiento?.absoluto != null);
+  const abs = conCrec.length ? conCrec.reduce((s,c) => s + c.aud.crecimiento.absoluto, 0) : null;
+  const base = conCrec.reduce((s,c) => s + (c.aud.followers - c.aud.crecimiento.absoluto), 0);
+  const contenido = CONTENIDO_DISPONIBLE();  // Δviews/engagement: solo TikTok
+  const sov = (contenido && cuentas.some(c => c.deltaViews != null))
     ? cuentas.reduce((s,c) => s + (c.deltaViews ?? 0), 0) : null;
-  const ult = DATA.windows[estado.ventana];
   const activas = cuentas.filter(c => c.ultimaPublicacion &&
     (new Date(DATA.snapshots.last) - new Date(c.ultimaPublicacion)) / 864e5 <= 30);
   return {
     n: cuentas.length,
-    seguidores: cuentas.reduce((s,c) => s + (c.followers ?? 0), 0),
+    seguidores: cuentas.reduce((s,c) => s + (c.aud?.followers ?? 0), 0),
     crecAbs: abs,
     crecPct: (abs != null && base > 0) ? abs / base * 100 : null,
     sov,
-    engagement: mediana(cuentas.map(c => c.engagement)),
-    conCuenta: roster.filter(l => l.handle).length,
+    engagement: contenido ? mediana(cuentas.map(c => c.engagement)) : null,
+    conCuenta: roster.filter(tieneCuentaEnRed).length,
     total: roster.length,
     activas: activas.length,
+    contenido,
   };
 }
 
 /* ---------- 1. tiles ---------- */
 function pintarTiles(cuentas, roster){
   const a = agregar(cuentas, roster);
-  const topMomentum = cuentas.filter(c => c.crecimiento?.porcentual != null)
-    .sort((x,y) => y.crecimiento.porcentual - x.crecimiento.porcentual)[0];
+  const fuenteAud = estado.red === "tiktok" ? "TikTok"
+    : estado.red === "instagram" ? "IG" : "TikTok+IG";
+  // "más momentum" = mayor crecimiento % de audiencia (aplica a cualquier red)
+  const topMomentum = cuentas.filter(c => c.aud?.crecimiento?.porcentual != null)
+    .sort((x,y) => y.aud.crecimiento.porcentual - x.aud.crecimiento.porcentual)[0];
+  // "video de la semana" = breakout más grande (SOLO TikTok)
   let topVideo = null, topDueno = null;
-  for (const c of cuentas)
-    for (const b of c.breakouts)
-      if (!topVideo || b.views > topVideo.views){ topVideo = b; topDueno = c; }
+  if (a.contenido)
+    for (const c of cuentas)
+      for (const b of c.breakouts)
+        if (!topVideo || b.views > topVideo.views){ topVideo = b; topDueno = c; }
 
   const tiles = [
-    {etq:"Crecimiento del conjunto",
+    {etq:"Crecimiento del conjunto", fuente: fuenteAud,
      valor: a.crecAbs != null ? `${signo(a.crecAbs)}${fmtC(Math.abs(a.crecAbs))}` : "—",
      clase: a.crecAbs != null ? claseDelta(a.crecAbs) : "neutrotxt",
      quien: a.crecAbs != null
-       ? `${fmtD(a.crecPct)}% · ${cuentas.filter(c => c.crecimiento?.absoluto != null).length} de ${a.n} cuentas con dato`
-       : "se activa con la foto del lunes"},
-    {etq:"Atención capturada (Δviews)",
-     valor: a.sov != null ? fmtC(a.sov) : "—", clase:"",
-     quien: a.sov != null ? "views nuevas del período" : "se activa con la foto del lunes"},
-    {etq:"Legislador con más momentum",
-     valor: topMomentum ? `${signo(topMomentum.crecimiento.porcentual)}${fmtD(Math.abs(topMomentum.crecimiento.porcentual))}%`
+       ? `${fmtD(a.crecPct)}% · ${cuentas.filter(c => c.aud?.crecimiento?.absoluto != null).length} de ${a.n} cuentas con dato`
+       : "se activa con la próxima foto"},
+    a.contenido
+      ? {etq:"Atención capturada (Δviews)", fuente:"TikTok",
+         valor: a.sov != null ? fmtC(a.sov) : "—", clase:"",
+         quien: a.sov != null ? "views nuevas del período" : "se activa con la próxima foto"}
+      : {etq:"Atención capturada", fuente:"—",
+         valor:"n/d", clase:"neutrotxt", quien:"Instagram es perfil-only (sin views)"},
+    {etq:"Con más momentum", fuente: fuenteAud,
+     valor: topMomentum ? `${signo(topMomentum.aud.crecimiento.porcentual)}${fmtD(Math.abs(topMomentum.aud.crecimiento.porcentual))}%`
                         : "—",
-     clase: topMomentum ? claseDelta(topMomentum.crecimiento.porcentual) : "neutrotxt",
+     clase: topMomentum ? claseDelta(topMomentum.aud.crecimiento.porcentual) : "neutrotxt",
      quien: topMomentum ? topMomentum.legislador.nombre : "espera la próxima foto"},
-    {etq:"Video de la semana",
-     valor: topVideo ? fmtC(topVideo.views) + " views" : "—", clase:"",
-     quien: topVideo ? `${topDueno.legislador.nombre} · ${fmtD(topVideo.ratio,1)}× su mediana`
-                     : "sin breakouts en la ventana"},
+    a.contenido
+      ? {etq:"Video de la semana", fuente:"TikTok",
+         valor: topVideo ? fmtC(topVideo.views) + " views" : "—", clase:"",
+         quien: topVideo ? `${topDueno.legislador.nombre} · ${fmtD(topVideo.ratio,1)}× su mediana`
+                         : "sin breakouts en la ventana"}
+      : {etq:"Cuenta más grande", fuente:"IG",
+         valor: cuentas.length ? fmtC(Math.max(...cuentas.map(c => c.aud?.followers ?? 0))) : "—",
+         clase:"",
+         quien: (() => {
+           const t = [...cuentas].sort((x,y) => (y.aud?.followers ?? 0) - (x.aud?.followers ?? 0))[0];
+           return t ? t.legislador.nombre : "—";
+         })()},
   ];
   $("#tiles").innerHTML = tiles.map(t => `
-    <div class="tile"><div class="etq">${t.etq}</div>
+    <div class="tile"><div class="etq">${t.etq}<span class="fuente">${t.fuente}</span></div>
     <div class="valor mono ${t.clase}">${t.valor}</div>
     <div class="quien">${t.quien}</div></div>`).join("");
 }
@@ -359,9 +450,13 @@ function pintarBloques(cuentas, roster){
                roster.filter(l => l.sector === s)),
   }));
 
-  /* barra de share of voice (solo si hay 2 bloques y datos) */
+  const contenido = CONTENIDO_DISPONIBLE();
+  const fuenteAud = estado.red === "tiktok" ? "TikTok"
+    : estado.red === "instagram" ? "IG" : "TikTok+IG";
+
+  /* barra de share of voice (contenido TikTok; solo si hay 2 bloques y datos) */
   let html = "";
-  if (ags.length === 2 && ags.every(x => x.a.sov != null)){
+  if (contenido && ags.length === 2 && ags.every(x => x.a.sov != null)){
     const total = ags[0].a.sov + ags[1].a.sov;
     if (total > 0){
       html += `<div class="sov-barra">` + ags.map(x =>
@@ -369,16 +464,22 @@ function pintarBloques(cuentas, roster){
           ${Math.round(x.a.sov/total*100)}%</div>`).join("") + `</div>
         <div class="sov-leyenda">` + ags.map(x =>
         `<span><i style="background:${COLOR[x.sector]}"></i>${NOMBRE_BLOQUE[x.sector]}:
-          ${fmtC(x.a.sov)} views nuevas</span>`).join("") + `</div>`;
+          ${fmtC(x.a.sov)} views nuevas <span class="fuente">TikTok</span></span>`).join("") + `</div>`;
     }
-  } else if (ags.length === 2){
-    html += `<div class="vacio" style="margin-bottom:12px">La comparación de atención capturada
-      se activa con la próxima foto (lunes).</div>`;
+  } else if (contenido && ags.length === 2){
+    html += `<div class="vacio" style="margin-bottom:12px">La atención capturada (share of voice)
+      se activa con la próxima foto.</div>`;
+  } else if (!contenido){
+    html += `<div class="vacio" style="margin-bottom:12px">El share of voice mide views nuevas —
+      solo existe en TikTok. En Instagram (perfil-only) se comparan audiencia y crecimiento.</div>`;
   }
+
+  const celdaContenido = (valor) => contenido
+    ? `<div class="v mono">${valor}</div>`
+    : `<div class="v mono neutrotxt" style="font-size:13px">n/d en IG</div>`;
 
   html += `<div class="bloques">` + ags.map(x => {
     const a = x.a;
-    /* desglose por coalición dentro del bloque */
     const coas = [...new Set(cuentas.filter(c => c.legislador.sector === x.sector)
       .map(c => c.legislador.coalicion))];
     const filasCoa = coas.map(coa => {
@@ -386,22 +487,21 @@ function pintarBloques(cuentas, roster){
                           roster.filter(l => l.coalicion === coa));
       return `<div class="fila"><span>${coa} <span class="terr">(${sub.n})</span></span>
         <span class="mono">${sub.crecPct != null ? signo(sub.crecPct)+fmtD(Math.abs(sub.crecPct))+"%" : "—"}
-        · ${sub.sov != null ? fmtC(sub.sov)+" Δv" : "—"}</span></div>`;
+        ${contenido && sub.sov != null ? "· "+fmtC(sub.sov)+" Δv" : ""}</span></div>`;
     }).join("");
     return `<div class="bloque">
       <h3><i style="background:${COLOR[x.sector]}"></i>${NOMBRE_BLOQUE[x.sector]}
-        <span class="n">${a.n} cuentas · ${fmtC(a.seguidores)} seguidores sumados</span></h3>
+        <span class="n">${a.n} cuentas · ${fmtC(a.seguidores)} seguidores <span class="fuente">${fuenteAud}</span></span></h3>
       <div class="metricas">
-        <div class="m"><div class="e">Crecimiento</div>
+        <div class="m"><div class="e">Crecimiento <span class="fuente">${fuenteAud}</span></div>
           <div class="v mono ${a.crecPct != null ? claseDelta(a.crecPct) : "neutrotxt"}">
           ${a.crecPct != null ? signo(a.crecPct)+fmtD(Math.abs(a.crecPct))+"%" : "—"}</div></div>
-        <div class="m"><div class="e">Atención (Δviews)</div>
-          <div class="v mono">${a.sov != null ? fmtC(a.sov) : "—"}</div></div>
-        <div class="m"><div class="e">Engagement mediano</div>
-          <div class="v mono">${a.engagement != null ? fmtD(a.engagement)+"%" : "—"}</div></div>
-        <div class="m"><div class="e">Cobertura</div>
-          <div class="v mono">${a.conCuenta}/${a.total} <span style="font-size:12px;color:var(--tinta-3)">
-          · ${a.activas} activas 30d</span></div></div>
+        <div class="m"><div class="e">Atención Δviews <span class="fuente">TikTok</span></div>
+          ${celdaContenido(a.sov != null ? fmtC(a.sov) : "—")}</div>
+        <div class="m"><div class="e">Engagement mediano <span class="fuente">TikTok</span></div>
+          ${celdaContenido(a.engagement != null ? fmtD(a.engagement)+"%" : "—")}</div>
+        <div class="m"><div class="e">Cobertura <span class="fuente">${fuenteAud}</span></div>
+          <div class="v mono">${a.conCuenta}/${a.total}${contenido ? ` <span style="font-size:12px;color:var(--tinta-3)">· ${a.activas} activas 30d</span>` : ""}</div></div>
       </div>
       <div class="coas">${filasCoa}</div>
     </div>`;
@@ -412,6 +512,11 @@ function pintarBloques(cuentas, roster){
 /* ---------- 3. momentum ---------- */
 function pintarMomentum(cuentas){
   const cont = $("#momentum");
+  if (!CONTENIDO_DISPONIBLE()){
+    cont.innerHTML = `<div class="vacio">El mapa cruza crecimiento con tracción (velocidad de
+      views), que solo existe en TikTok. No aplica al modo Instagram (perfil-only).</div>`;
+    return;
+  }
   const puntos = cuentas.filter(c =>
     c.crecimiento?.porcentual != null && c.velocidad != null);
   if (puntos.length < 2){
@@ -454,7 +559,7 @@ function pintarMomentum(cuentas){
     for (const n of [halo, dot]){
       n.addEventListener("mousemove", e => mostrarTip(e, html));
       n.addEventListener("mouseleave", ocultarTip);
-      n.addEventListener("click", () => seleccionar(p.handle));
+      n.addEventListener("click", () => seleccionar(p.legislador.nombre));
     }
     svg.append(halo, dot, etq);
   }
@@ -468,70 +573,75 @@ function pintarMomentum(cuentas){
 
 /* ---------- 4. ranking ---------- */
 let orden = {col:"followers", asc:false};
-const COLS = [
-  {id:"nombre", etq:"Legislador", val:c => c.legislador.nombre},
-  {id:"followers", etq:"Seguidores", val:c => c.followers},
-  {id:"crecimiento", etq:"Crecimiento", val:c => c.crecimiento?.porcentual},
-  {id:"deltaViews", etq:"Atención Δv", val:c => c.deltaViews},
-  {id:"engagement", etq:"Engagement", val:c => c.engagement},
-  {id:"velocidad", etq:"Velocidad", val:c => c.velocidad},
-  {id:"breakouts", etq:"Breakouts", val:c => c.breakouts.length},
+const COL_NOMBRE = {id:"nombre", etq:"Legislador", val:c => c.legislador.nombre,
+  celda: c => `${c.legislador.nombre}<span class="chip" style="background:${colorDe(c.legislador)}">${c.legislador.partido}</span><span class="terr">${c.legislador.territorio}</span>`};
+const COLS_AUDIENCIA = [
+  {id:"followers", etq:"Seguidores", val:c => c.aud?.followers,
+   celda: c => fmtC(c.aud?.followers)},
+  {id:"crecimiento", etq:"Crecimiento", val:c => c.aud?.crecimiento?.porcentual,
+   celda: c => { const cr = c.aud?.crecimiento?.porcentual;
+     return cr != null ? `<span class="${claseDelta(cr)}">${signo(cr)}${fmtD(Math.abs(cr))}%</span>` : "—"; }},
 ];
+const COLS_CONTENIDO = [
+  {id:"deltaViews", etq:"Atención Δv", val:c => c.deltaViews, celda: c => c.deltaViews != null ? fmtC(c.deltaViews) : "—"},
+  {id:"engagement", etq:"Engagement", val:c => c.engagement, celda: c => c.engagement != null ? fmtD(c.engagement)+"%" : "—"},
+  {id:"velocidad", etq:"Velocidad", val:c => c.velocidad, celda: c => c.velocidad != null ? fmtD(c.velocidad) : "—"},
+  {id:"breakouts", etq:"Breakouts", val:c => c.breakouts.length, celda: c => c.breakouts.length || "—"},
+];
+function columnas(){
+  return CONTENIDO_DISPONIBLE()
+    ? [COL_NOMBRE, ...COLS_AUDIENCIA, ...COLS_CONTENIDO]
+    : [COL_NOMBRE, ...COLS_AUDIENCIA];
+}
 function pintarTabla(cuentas){
+  const cols = columnas();
+  if (!cols.some(c => c.id === orden.col)) orden = {col:"followers", asc:false};
   const lista = [...cuentas].sort((a, b) => {
-    const col = COLS.find(c => c.id === orden.col);
+    const col = cols.find(c => c.id === orden.col);
     const va = col.val(a), vb = col.val(b);
     if (va == null) return 1; if (vb == null) return -1;
     const cmp = typeof va === "string" ? va.localeCompare(vb) : va - vb;
     return orden.asc ? cmp : -cmp;
   });
-  const th = COLS.map(c => `<th data-col="${c.id}">${c.etq}${orden.col === c.id
+  const fuenteCol = id => (id === "followers" || id === "crecimiento")
+    ? (estado.red === "tiktok" ? "TikTok" : estado.red === "instagram" ? "IG" : "TT+IG")
+    : (id === "nombre" ? "" : "TikTok");
+  const th = cols.map(c => `<th data-col="${c.id}">${c.etq}${fuenteCol(c.id) ? ` <span class="fuente">${fuenteCol(c.id)}</span>` : ""}${orden.col === c.id
     ? ` <span class="flecha">${orden.asc ? "▲" : "▼"}</span>` : ""}</th>`).join("");
-  const filas = lista.map(c => {
-    const l = c.legislador;
-    const cr = c.crecimiento?.porcentual;
-    return `<tr data-handle="${c.handle}">
-      <td>${l.nombre}<span class="chip" style="background:${colorDe(l)}">${l.partido}</span>
-        <span class="terr">${l.territorio}</span></td>
-      <td>${fmtC(c.followers)}</td>
-      <td>${cr != null ? `<span class="${claseDelta(cr)}">${signo(cr)}${fmtD(Math.abs(cr))}%</span>` : "—"}</td>
-      <td>${c.deltaViews != null ? fmtC(c.deltaViews) : "—"}</td>
-      <td>${c.engagement != null ? fmtD(c.engagement) + "%" : "—"}</td>
-      <td>${c.velocidad != null ? fmtD(c.velocidad) : "—"}</td>
-      <td>${c.breakouts.length || "—"}</td>
-    </tr>`;
-  }).join("");
+  const filas = lista.map(c =>
+    `<tr data-nombre="${c.legislador.nombre.replace(/"/g,"&quot;")}">` +
+    cols.map(col => `<td>${col.celda(c)}</td>`).join("") + `</tr>`).join("");
   $("#tabla").innerHTML = `<thead><tr>${th}</tr></thead><tbody>${filas}</tbody>`;
   $("#tabla").querySelectorAll("th").forEach(el => el.addEventListener("click", () => {
     orden = {col: el.dataset.col, asc: orden.col === el.dataset.col ? !orden.asc : false};
     pintarTabla(cuentasFiltradas());
   }));
   $("#tabla").querySelectorAll("tbody tr").forEach(el =>
-    el.addEventListener("click", () => seleccionar(el.dataset.handle)));
+    el.addEventListener("click", () => seleccionar(el.dataset.nombre)));
 }
 
 /* ---------- 5. ficha individual ---------- */
-function seleccionar(handle){
-  estado.sel = handle;
+function seleccionar(nombre){
+  estado.sel = nombre;
   pintarFicha();
   $("#sec-ficha").scrollIntoView({behavior:"smooth", block:"start"});
 }
 function pintarFicha(){
   const sec = $("#sec-ficha");
   if (!estado.sel){ sec.hidden = true; return; }
-  const w = DATA.windows[estado.ventana];
-  const c = w.accounts.find(x => x.handle === estado.sel);
-  if (!c || !c.legislador){ sec.hidden = true; estado.sel = null; return; }
-  const l = c.legislador;
+  const l = DATA.roster.find(x => x.nombre === estado.sel);
+  if (!l){ sec.hidden = true; estado.sel = null; return; }
+  const c = unidadLegislador(l);   // une TikTok + IG de este legislador
   sec.hidden = false;
 
-  /* comparación contra la mediana de su bloque */
+  /* comparación contra la mediana de su bloque (contenido TikTok) */
+  const w = DATA.windows[estado.ventana];
   const bloque = w.accounts.filter(x => x.legislador?.sector === l.sector);
   const medCrec = mediana(bloque.map(x => x.crecimiento?.porcentual));
   const medEng = mediana(bloque.map(x => x.engagement));
   const frases = [];
   if (c.crecimiento?.porcentual != null && medCrec != null && medCrec !== 0)
-    frases.push(`Crece <b>${fmtD(c.crecimiento.porcentual / medCrec, 1)}×</b> la mediana de su bloque (${NOMBRE_BLOQUE[l.sector].toLowerCase()}).`);
+    frases.push(`Crece <b>${fmtD(c.crecimiento.porcentual / medCrec, 1)}×</b> la mediana TikTok de su bloque (${NOMBRE_BLOQUE[l.sector]?.toLowerCase() || l.sector}).`);
   if (c.engagement != null && medEng != null)
     frases.push(`Engagement ${c.engagement >= medEng ? "sobre" : "bajo"} la mediana de su bloque
       (<b>${fmtD(c.engagement)}%</b> vs ${fmtD(medEng)}%).`);
@@ -564,39 +674,40 @@ function pintarFicha(){
   }
 
   const medViews = mediana(c.videosTop.map(v => v.views));
+  const tt = c.tiktok, ig = c.ig;
+  const crecChip = cr => cr?.porcentual != null
+    ? ` <span class="${claseDelta(cr.porcentual)}" style="font-size:12px">${signo(cr.porcentual)}${fmtD(Math.abs(cr.porcentual))}%</span>` : "";
+  const cuerpoTT = tt
+    ? `<div><h2 style="font-size:13px">Seguidores TikTok en el tiempo</h2>${svgSerie}
+        ${frases.length ? `<div class="vscomp">${frases.join("<br>")}</div>` : ""}</div>
+      <div><h2 style="font-size:13px">Videos con más views <span class="fuente">TikTok</span></h2>
+        ${c.videosTop.map(v => `<div class="video-item">
+          <span class="cap">${(v.caption || "(sin caption)").replace(/</g,"&lt;")}
+            ${medViews && v.views >= 3*medViews ? `<span class="badge">breakout</span>` : ""}</span>
+          <span class="num mono">${fmtC(v.views)}</span></div>`).join("")}</div>`
+    : `<div class="vacio" style="grid-column:1/-1">Sin cuenta de TikTok — este legislador solo
+        tiene presencia en Instagram (perfil-only, sin datos de contenido).</div>`;
+
   sec.querySelector("#ficha").innerHTML = `
     <div class="cabeza">
       <div>
         <h2>${l.nombre}
           <span class="chip" style="background:${colorDe(l)}">${l.partido}</span></h2>
-        <p class="desc" style="margin:0">${l.cargo} · ${l.territorio} · ${l.coalicion} ·
-          @${c.handle}${c.verified ? " ✔" : ""}</p>
+        <p class="desc" style="margin:0">${l.cargo} · ${l.territorio} · ${l.coalicion}
+          ${tt ? "· TikTok @" + c.handle + (c.verified ? " ✔" : "") : ""}
+          ${ig ? "· IG @" + l.handleInstagram : ""}</p>
       </div>
       <button class="cerrar" id="cerrar-ficha">✕ cerrar</button>
     </div>
     <div class="ficha-stats">
-      <div class="m"><div class="e">Seguidores</div><div class="v mono">${fmtC(c.followers)}</div></div>
-      <div class="m"><div class="e">Crecimiento</div><div class="v mono ${c.crecimiento?.porcentual != null ? claseDelta(c.crecimiento.porcentual) : "neutrotxt"}">
-        ${c.crecimiento?.porcentual != null ? signo(c.crecimiento.porcentual)+fmtD(Math.abs(c.crecimiento.porcentual))+"%" : "—"}</div></div>
-      <div class="m"><div class="e">Atención (Δviews)</div><div class="v mono">${c.deltaViews != null ? fmtC(c.deltaViews) : "—"}</div></div>
-      <div class="m"><div class="e">Engagement</div><div class="v mono">${c.engagement != null ? fmtD(c.engagement)+"%" : "—"}</div></div>
-      <div class="m"><div class="e">Cadencia</div><div class="v mono">${c.cadencia != null ? fmtD(c.cadencia,1)+"/sem" : "—"}</div></div>
-      <div class="m"><div class="e">Views/seguidor</div><div class="v mono">${c.viewsPorSeguidor != null ? fmtD(c.viewsPorSeguidor) : "—"}</div></div>
-      <div class="m"><div class="e">Instagram</div><div class="v mono">${
-        c.instagram && c.instagram.followers != null
-          ? fmtC(c.instagram.followers) + (c.instagram.crecimiento?.porcentual != null
-              ? ` <span class="${claseDelta(c.instagram.crecimiento.porcentual)}" style="font-size:12px">${signo(c.instagram.crecimiento.porcentual)}${fmtD(Math.abs(c.instagram.crecimiento.porcentual))}%</span>` : "")
-          : (l.handleInstagram ? "…" : "—")}</div></div>
+      <div class="m"><div class="e">Seguidores TikTok</div><div class="v mono">${tt ? fmtC(tt.followers) + crecChip(tt.crecimiento) : "—"}</div></div>
+      <div class="m"><div class="e">Seguidores Instagram</div><div class="v mono">${ig ? fmtC(ig.followers) + crecChip(ig.crecimiento) : (l.handleInstagram ? "…" : "—")}</div></div>
+      <div class="m"><div class="e">Atención Δviews <span class="fuente">TT</span></div><div class="v mono">${c.deltaViews != null ? fmtC(c.deltaViews) : "—"}</div></div>
+      <div class="m"><div class="e">Engagement <span class="fuente">TT</span></div><div class="v mono">${c.engagement != null ? fmtD(c.engagement)+"%" : "—"}</div></div>
+      <div class="m"><div class="e">Cadencia <span class="fuente">TT</span></div><div class="v mono">${c.cadencia != null ? fmtD(c.cadencia,1)+"/sem" : "—"}</div></div>
+      <div class="m"><div class="e">Views/seguidor <span class="fuente">TT</span></div><div class="v mono">${c.viewsPorSeguidor != null ? fmtD(c.viewsPorSeguidor) : "—"}</div></div>
     </div>
-    <div class="ficha-cuerpo">
-      <div><h2 style="font-size:13px">Seguidores en el tiempo</h2>${svgSerie}
-        ${frases.length ? `<div class="vscomp">${frases.join("<br>")}</div>` : ""}</div>
-      <div><h2 style="font-size:13px">Videos con más views (últimos 10 publicados)</h2>
-        ${c.videosTop.map(v => `<div class="video-item">
-          <span class="cap">${(v.caption || "(sin caption)").replace(/</g,"&lt;")}
-            ${medViews && v.views >= 3*medViews ? `<span class="badge">breakout</span>` : ""}</span>
-          <span class="num mono">${fmtC(v.views)}</span></div>`).join("")}</div>
-    </div>`;
+    <div class="ficha-cuerpo">${cuerpoTT}</div>`;
   $("#cerrar-ficha").addEventListener("click", () => {
     estado.sel = null; $("#buscador").value = ""; pintarFicha();
   });
@@ -604,60 +715,72 @@ function pintarFicha(){
 
 /* ---------- 6. terreno cedido ---------- */
 function pintarCedido(cuentas, roster){
-  const sinCuenta = roster.filter(l => !l.handle);
-  const dormidas = cuentas.filter(c => c.ultimaPublicacion &&
-    (new Date(DATA.snapshots.last) - new Date(c.ultimaPublicacion)) / 864e5 > 30);
+  const red = estado.red;
+  const etqRed = red === "tiktok" ? "TikTok" : red === "instagram" ? "Instagram" : "ninguna red";
+  const sinCuenta = roster.filter(l => !tieneCuentaEnRed(l));
+  // "dormidas" (sin publicar >30d) es concepto de TikTok — no aplica en modo IG
+  const dormidas = CONTENIDO_DISPONIBLE()
+    ? cuentas.filter(c => c.ultimaPublicacion &&
+        (new Date(DATA.snapshots.last) - new Date(c.ultimaPublicacion)) / 864e5 > 30)
+    : [];
   const items = [
     ...sinCuenta.map(l => `<div class="item"><b>${l.nombre}</b>
       <span class="chip" style="background:${colorDe(l)}">${l.partido}</span>
-      <div class="estado">sin cuenta de TikTok · ${l.cargo} ${l.territorio}</div></div>`),
+      <div class="estado">sin cuenta en ${etqRed} · ${l.cargo} ${l.territorio}</div></div>`),
     ...dormidas.map(c => {
       const dias = Math.round((new Date(DATA.snapshots.last) - new Date(c.ultimaPublicacion)) / 864e5);
       return `<div class="item"><b>${c.legislador.nombre}</b>
         <span class="chip" style="background:${colorDe(c.legislador)}">${c.legislador.partido}</span>
-        <div class="estado">sin publicar hace ${dias} días · @${c.handle}</div></div>`;
+        <div class="estado">sin publicar en TikTok hace ${dias} días · @${c.handle}</div></div>`;
     }),
   ];
   $("#cedido").innerHTML = items.length ? items.join("")
-    : `<div class="vacio" style="grid-column:1/-1">Todo el conjunto filtrado tiene cuenta y publicó en los últimos 30 días.</div>`;
+    : `<div class="vacio" style="grid-column:1/-1">Todo el conjunto filtrado tiene cuenta${CONTENIDO_DISPONIBLE() ? " y publicó en los últimos 30 días" : ""}.</div>`;
 }
 
 /* ---------- 7. lecturas ---------- */
 function pintarLecturas(cuentas, roster){
   const frases = [];
-  const conCrec = cuentas.filter(c => c.crecimiento?.porcentual != null);
+  const contenido = CONTENIDO_DISPONIBLE();
+  const etqRed = estado.red === "tiktok" ? "TikTok" : estado.red === "instagram" ? "Instagram" : "el conjunto de redes";
+  const conCrec = cuentas.filter(c => c.aud?.crecimiento?.porcentual != null);
   if (!conCrec.length){
-    frases.push("Primera foto de esta base: las tendencias (crecimiento, momentum, atención) se activan con la corrida del lunes. La periodicidad produce los datos.");
+    frases.push(`Primera foto de esta base en ${etqRed}: las tendencias de crecimiento se activan con la próxima corrida. La periodicidad produce los datos.`);
   } else {
-    const top = [...conCrec].sort((a,b) => b.crecimiento.porcentual - a.crecimiento.porcentual)[0];
-    frases.push(`${top.legislador.nombre} lidera el crecimiento del conjunto filtrado:
-      ${signo(top.crecimiento.porcentual)}${fmtD(Math.abs(top.crecimiento.porcentual))}%
-      (${top.crecimiento.absoluto >= 0 ? "+" : ""}${fmtC(top.crecimiento.absoluto)} seguidores).`);
-    if (!estado.sector){
+    const top = [...conCrec].sort((a,b) => b.aud.crecimiento.porcentual - a.aud.crecimiento.porcentual)[0];
+    frases.push(`${top.legislador.nombre} lidera el crecimiento en ${etqRed}:
+      ${signo(top.aud.crecimiento.porcentual)}${fmtD(Math.abs(top.aud.crecimiento.porcentual))}%
+      (${top.aud.crecimiento.absoluto >= 0 ? "+" : ""}${fmtC(top.aud.crecimiento.absoluto)} seguidores).`);
+    if (!estado.sector && contenido){
       const g = agregar(cuentas.filter(c => c.legislador.sector === "gobierno"), roster.filter(l => l.sector === "gobierno"));
       const o = agregar(cuentas.filter(c => c.legislador.sector === "oposicion"), roster.filter(l => l.sector === "oposicion"));
       if (g.sov != null && o.sov != null && g.sov + o.sov > 0){
         const gana = g.sov > o.sov ? "El gobierno" : "La oposición";
         const pct = Math.round(Math.max(g.sov, o.sov) / (g.sov + o.sov) * 100);
-        frases.push(`${gana} capturó el ${pct}% de la atención del período (${fmtC(Math.max(g.sov,o.sov))} de ${fmtC(g.sov+o.sov)} views nuevas).`);
+        frases.push(`${gana} capturó el ${pct}% de la atención del período en TikTok (${fmtC(Math.max(g.sov,o.sov))} de ${fmtC(g.sov+o.sov)} views nuevas).`);
       }
     }
   }
-  for (const c of cuentas){
-    if (c.aceleracion?.estado === "acelera")
-      frases.push(`${c.legislador.nombre} está acelerando: la segunda mitad del período creció más que la primera.`);
-    if (c.breakouts.length)
-      frases.push(`Breakout de ${c.legislador.nombre}: un video con ${fmtC(c.breakouts[0].views)} views,
-        ${fmtD(c.breakouts[0].ratio,1)}× su mediana.`);
-  }
-  const sinCuenta = roster.filter(l => !l.handle);
-  if (sinCuenta.length)
+  if (contenido)
+    for (const c of cuentas){
+      if (c.aceleracion?.estado === "acelera")
+        frases.push(`${c.legislador.nombre} está acelerando en TikTok: la segunda mitad del período creció más que la primera.`);
+      if (c.breakouts.length)
+        frases.push(`Breakout de ${c.legislador.nombre}: un video con ${fmtC(c.breakouts[0].views)} views,
+          ${fmtD(c.breakouts[0].ratio,1)}× su mediana.`);
+    }
+  const sinCuenta = roster.filter(l => !tieneCuentaEnRed(l));
+  if (sinCuenta.length){
+    const etq = estado.red === "tiktok" ? "TikTok" : estado.red === "instagram" ? "Instagram" : "ninguna red";
     frases.push(`Terreno cedido: ${sinCuenta.map(l => l.nombre).join(", ")}
-      no ${sinCuenta.length > 1 ? "tienen" : "tiene"} cuenta de TikTok.`);
-  const engs = cuentas.filter(c => c.engagement != null);
-  if (engs.length >= 2){
-    const t = [...engs].sort((a,b) => b.engagement - a.engagement)[0];
-    frases.push(`El engagement más alto del conjunto es de ${t.legislador.nombre}: ${fmtD(t.engagement)}% mediano por video.`);
+      no ${sinCuenta.length > 1 ? "tienen" : "tiene"} cuenta en ${etq}.`);
+  }
+  if (contenido){
+    const engs = cuentas.filter(c => c.engagement != null);
+    if (engs.length >= 2){
+      const t = [...engs].sort((a,b) => b.engagement - a.engagement)[0];
+      frases.push(`El engagement más alto del conjunto es de ${t.legislador.nombre}: ${fmtD(t.engagement)}% mediano por video (TikTok).`);
+    }
   }
   $("#lecturas").innerHTML = frases.map(f => `<li>${f}</li>`).join("");
 }
@@ -674,7 +797,7 @@ function poblarFiltros(){
   opciones("#f-partido", [...new Set(r.map(l => l.partido))].sort(), "Partido");
   opciones("#f-territorio", [...new Set(r.map(l => l.territorio))], "Territorio");
   const dl = $("#lista-legisladores");
-  for (const l of r.filter(x => x.handle)) dl.append(new Option(l.nombre));
+  for (const l of r.filter(x => x.handle || x.handleInstagram)) dl.append(new Option(l.nombre));
 }
 
 function pintarTodo(){
@@ -693,15 +816,17 @@ function pintarTodo(){
 
 document.querySelectorAll(".vent").forEach(b =>
   b.addEventListener("click", () => { estado.ventana = b.dataset.dias; pintarTodo(); }));
+$("#f-red").addEventListener("change", e => { estado.red = e.target.value; pintarTodo(); });
 for (const [id, clave] of [["#f-sector","sector"],["#f-coalicion","coalicion"],
                            ["#f-partido","partido"],["#f-territorio","territorio"]])
   $(id).addEventListener("change", e => { estado[clave] = e.target.value; pintarTodo(); });
 $("#buscador").addEventListener("change", e => {
-  const l = DATA.roster.find(x => x.nombre === e.target.value && x.handle);
-  if (l) seleccionar(l.handle);
+  const l = DATA.roster.find(x => x.nombre === e.target.value && (x.handle || x.handleInstagram));
+  if (l) seleccionar(l.nombre);
 });
 $("#limpiar").addEventListener("click", () => {
-  estado = {...estado, sector:"", coalicion:"", partido:"", territorio:"", sel:null};
+  estado = {...estado, red:"global", sector:"", coalicion:"", partido:"", territorio:"", sel:null};
+  $("#f-red").value = "global";
   for (const id of ["#f-sector","#f-coalicion","#f-partido","#f-territorio"]) $(id).value = "";
   $("#buscador").value = "";
   pintarTodo();

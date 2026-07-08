@@ -157,7 +157,8 @@ El dashboard de producción debe **igualar su lenguaje visual** y adaptarlo para
 - **El color codifica BLOQUE POLÍTICO** (así piensa el lector): **gobierno = azul petróleo #17679E**, **oposición = terracota #C2410C**, independientes = gris #6B7280. Paleta validada para daltonismo; deliberadamente ninguno es color de campaña de un partido (neutralidad visual).
 - Verde #15803D = subidas, rojo #DC2626 = bajadas — siempre con signo y flecha ▲▼, nunca color solo.
 - Tipografía: Space Grotesk (títulos), JetBrains Mono (números), Inter (texto).
-- **Una sola fila de filtros** gobierna todas las secciones: ventana 7/14/30d, sector, coalición, partido, territorio, buscador de legislador.
+- **Una sola fila de filtros** gobierna todas las secciones: ventana 7/14/30d, **red (global/TikTok/Instagram)**, sector, coalición, partido, territorio, buscador de legislador.
+- **Cada métrica declara su fuente** con un chip: audiencia/crecimiento = TikTok, IG o TikTok+IG según la red activa; contenido (Δviews, engagement, velocidad, breakouts, momentum) = siempre TikTok. En modo Instagram (perfil-only) las secciones de contenido se declaran "n/d en IG" en vez de mostrar ceros; audiencia/crecimiento/cobertura siguen. Global suma seguidores de ambas redes.
 
 ### Secciones (en orden)
 1. **El período en 4 números** (tiles): crecimiento del conjunto, atención capturada (Δviews), legislador con más momentum, video de la semana.

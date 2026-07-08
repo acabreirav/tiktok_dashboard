@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T18:18:03Z",
+  "generatedAt": "2026-07-08T21:03:40Z",
   "snapshots": {
     "count": 5,
     "first": "2026-07-07T03:39:00Z",
@@ -532,6 +532,268 @@
       "days": 7,
       "snapshotsEnVentana": 5,
       "hasGrowth": true,
+      "instagram": {
+        "tamararamirezdiputada": {
+          "followers": 2014,
+          "posts": 377,
+          "crecimiento": null
+        },
+        "pamelajilesdiputada": {
+          "followers": 370559,
+          "posts": 2209,
+          "crecimiento": null
+        },
+        "diego_vergara_diputado": {
+          "followers": 7350,
+          "posts": 691,
+          "crecimiento": null
+        },
+        "josemezapereira": {
+          "followers": 15447,
+          "posts": 2356,
+          "crecimiento": null
+        },
+        "jaimecolomat": {
+          "followers": 74366,
+          "posts": 6424,
+          "crecimiento": null
+        },
+        "jorge_alessandri": {
+          "followers": 83896,
+          "posts": 3688,
+          "crecimiento": null
+        },
+        "pancho.orregog": {
+          "followers": 256263,
+          "posts": 858,
+          "crecimiento": null
+        },
+        "juanirarrazavaldiputado": {
+          "followers": 9270,
+          "posts": 1744,
+          "crecimiento": null
+        },
+        "raulleivacarvajal": {
+          "followers": 21663,
+          "posts": 3303,
+          "crecimiento": null
+        },
+        "jakastadriasola": {
+          "followers": 64311,
+          "posts": 396,
+          "crecimiento": null
+        },
+        "hans_marowski": {
+          "followers": 14037,
+          "posts": 477,
+          "crecimiento": null
+        },
+        "ebassaletti": {
+          "followers": 22845,
+          "posts": 715,
+          "crecimiento": null
+        },
+        "capitanarod": {
+          "followers": 73151,
+          "posts": 1575,
+          "crecimiento": null
+        },
+        "mariseka": {
+          "followers": 206102,
+          "posts": 6725,
+          "crecimiento": null
+        },
+        "emischneiderv": {
+          "followers": 101417,
+          "posts": 1403,
+          "crecimiento": null
+        },
+        "guillermoramirezdiez": {
+          "followers": 44241,
+          "posts": 2601,
+          "crecimiento": null
+        },
+        "anamariagazmuriv": {
+          "followers": 102548,
+          "posts": 3912,
+          "crecimiento": null
+        },
+        "claudiamoradiputada": {
+          "followers": 6299,
+          "posts": 1082,
+          "crecimiento": null
+        },
+        "alvaro_carter_fernandez": {
+          "followers": 30394,
+          "posts": 569,
+          "crecimiento": null
+        },
+        "marcosbarrazag": {
+          "followers": 14844,
+          "posts": 1418,
+          "crecimiento": null
+        },
+        "cuadradoprats": {
+          "followers": 7571,
+          "posts": 810,
+          "crecimiento": null
+        },
+        "catadelrealcl": {
+          "followers": 14245,
+          "posts": 945,
+          "crecimiento": null
+        },
+        "rojoedwards": {
+          "followers": 27655,
+          "posts": 1677,
+          "crecimiento": null
+        },
+        "pierkarlezi": {
+          "followers": 59466,
+          "posts": 1010,
+          "crecimiento": null
+        },
+        "valebecerra.cl": {
+          "followers": 32377,
+          "posts": 635,
+          "crecimiento": null
+        },
+        "gaelyeomans": {
+          "followers": 80172,
+          "posts": 2434,
+          "crecimiento": null
+        },
+        "ignacioachurra": {
+          "followers": 177266,
+          "posts": 529,
+          "crecimiento": null
+        },
+        "diputadoborisbarrera": {
+          "followers": 24013,
+          "posts": 4971,
+          "crecimiento": null
+        },
+        "constanzahube": {
+          "followers": 91823,
+          "posts": 1261,
+          "crecimiento": null
+        },
+        "manueljoseossandon": {
+          "followers": 42723,
+          "posts": 1774,
+          "crecimiento": null
+        },
+        "felipeross.cl": {
+          "followers": 7283,
+          "posts": 476,
+          "crecimiento": null
+        },
+        "maca_santelices": {
+          "followers": 80546,
+          "posts": 1305,
+          "crecimiento": null
+        },
+        "tatiurru": {
+          "followers": 19904,
+          "posts": 3161,
+          "crecimiento": null
+        },
+        "agustinromerodiputado": {
+          "followers": 16086,
+          "posts": 3218,
+          "crecimiento": null
+        },
+        "danielaserranosalazar": {
+          "followers": 24794,
+          "posts": 2737,
+          "crecimiento": null
+        },
+        "mario.olavarria.diputado": {
+          "followers": 8751,
+          "posts": 633,
+          "crecimiento": null
+        },
+        "docfilesoficial": {
+          "followers": 81793,
+          "posts": 706,
+          "crecimiento": null
+        },
+        "lorenapizarrosierra": {
+          "followers": 16790,
+          "posts": 1815,
+          "crecimiento": null
+        },
+        "diputadocesarvalenzuela": {
+          "followers": 24784,
+          "posts": 372,
+          "crecimiento": null
+        },
+        "cristianarayal": {
+          "followers": 33924,
+          "posts": 2077,
+          "crecimiento": null
+        },
+        "ximenaossandon.oficial": {
+          "followers": 17000,
+          "posts": 2441,
+          "crecimiento": null
+        },
+        "claudiapascualsenadora": {
+          "followers": 24017,
+          "posts": 3150,
+          "crecimiento": null
+        },
+        "lorena.fries": {
+          "followers": 24499,
+          "posts": 1486,
+          "crecimiento": null
+        },
+        "diputadoeduardoduran": {
+          "followers": 4633,
+          "posts": 1053,
+          "crecimiento": null
+        },
+        "zandraparisi_": {
+          "followers": 11828,
+          "posts": 616,
+          "crecimiento": null
+        },
+        "lcruzcoke": {
+          "followers": 68149,
+          "posts": 1243,
+          "crecimiento": null
+        },
+        "iraci.hassler": {
+          "followers": 167156,
+          "posts": 5368,
+          "crecimiento": null
+        },
+        "diego_schalper": {
+          "followers": 64727,
+          "posts": 4520,
+          "crecimiento": null
+        },
+        "fabiolacampillai_senadora": {
+          "followers": 80104,
+          "posts": 1734,
+          "crecimiento": null
+        },
+        "gonzalo.winter": {
+          "followers": 411320,
+          "posts": 2541,
+          "crecimiento": null
+        },
+        "gustavogaticav": {
+          "followers": 137603,
+          "posts": 451,
+          "crecimiento": null
+        },
+        "conyschon": {
+          "followers": 47181,
+          "posts": 1695,
+          "crecimiento": null
+        }
+      },
       "accounts": [
         {
           "handle": "pierkarlezinadietv",
@@ -4280,6 +4542,268 @@
       "days": 14,
       "snapshotsEnVentana": 5,
       "hasGrowth": true,
+      "instagram": {
+        "tamararamirezdiputada": {
+          "followers": 2014,
+          "posts": 377,
+          "crecimiento": null
+        },
+        "pamelajilesdiputada": {
+          "followers": 370559,
+          "posts": 2209,
+          "crecimiento": null
+        },
+        "diego_vergara_diputado": {
+          "followers": 7350,
+          "posts": 691,
+          "crecimiento": null
+        },
+        "josemezapereira": {
+          "followers": 15447,
+          "posts": 2356,
+          "crecimiento": null
+        },
+        "jaimecolomat": {
+          "followers": 74366,
+          "posts": 6424,
+          "crecimiento": null
+        },
+        "jorge_alessandri": {
+          "followers": 83896,
+          "posts": 3688,
+          "crecimiento": null
+        },
+        "pancho.orregog": {
+          "followers": 256263,
+          "posts": 858,
+          "crecimiento": null
+        },
+        "juanirarrazavaldiputado": {
+          "followers": 9270,
+          "posts": 1744,
+          "crecimiento": null
+        },
+        "raulleivacarvajal": {
+          "followers": 21663,
+          "posts": 3303,
+          "crecimiento": null
+        },
+        "jakastadriasola": {
+          "followers": 64311,
+          "posts": 396,
+          "crecimiento": null
+        },
+        "hans_marowski": {
+          "followers": 14037,
+          "posts": 477,
+          "crecimiento": null
+        },
+        "ebassaletti": {
+          "followers": 22845,
+          "posts": 715,
+          "crecimiento": null
+        },
+        "capitanarod": {
+          "followers": 73151,
+          "posts": 1575,
+          "crecimiento": null
+        },
+        "mariseka": {
+          "followers": 206102,
+          "posts": 6725,
+          "crecimiento": null
+        },
+        "emischneiderv": {
+          "followers": 101417,
+          "posts": 1403,
+          "crecimiento": null
+        },
+        "guillermoramirezdiez": {
+          "followers": 44241,
+          "posts": 2601,
+          "crecimiento": null
+        },
+        "anamariagazmuriv": {
+          "followers": 102548,
+          "posts": 3912,
+          "crecimiento": null
+        },
+        "claudiamoradiputada": {
+          "followers": 6299,
+          "posts": 1082,
+          "crecimiento": null
+        },
+        "alvaro_carter_fernandez": {
+          "followers": 30394,
+          "posts": 569,
+          "crecimiento": null
+        },
+        "marcosbarrazag": {
+          "followers": 14844,
+          "posts": 1418,
+          "crecimiento": null
+        },
+        "cuadradoprats": {
+          "followers": 7571,
+          "posts": 810,
+          "crecimiento": null
+        },
+        "catadelrealcl": {
+          "followers": 14245,
+          "posts": 945,
+          "crecimiento": null
+        },
+        "rojoedwards": {
+          "followers": 27655,
+          "posts": 1677,
+          "crecimiento": null
+        },
+        "pierkarlezi": {
+          "followers": 59466,
+          "posts": 1010,
+          "crecimiento": null
+        },
+        "valebecerra.cl": {
+          "followers": 32377,
+          "posts": 635,
+          "crecimiento": null
+        },
+        "gaelyeomans": {
+          "followers": 80172,
+          "posts": 2434,
+          "crecimiento": null
+        },
+        "ignacioachurra": {
+          "followers": 177266,
+          "posts": 529,
+          "crecimiento": null
+        },
+        "diputadoborisbarrera": {
+          "followers": 24013,
+          "posts": 4971,
+          "crecimiento": null
+        },
+        "constanzahube": {
+          "followers": 91823,
+          "posts": 1261,
+          "crecimiento": null
+        },
+        "manueljoseossandon": {
+          "followers": 42723,
+          "posts": 1774,
+          "crecimiento": null
+        },
+        "felipeross.cl": {
+          "followers": 7283,
+          "posts": 476,
+          "crecimiento": null
+        },
+        "maca_santelices": {
+          "followers": 80546,
+          "posts": 1305,
+          "crecimiento": null
+        },
+        "tatiurru": {
+          "followers": 19904,
+          "posts": 3161,
+          "crecimiento": null
+        },
+        "agustinromerodiputado": {
+          "followers": 16086,
+          "posts": 3218,
+          "crecimiento": null
+        },
+        "danielaserranosalazar": {
+          "followers": 24794,
+          "posts": 2737,
+          "crecimiento": null
+        },
+        "mario.olavarria.diputado": {
+          "followers": 8751,
+          "posts": 633,
+          "crecimiento": null
+        },
+        "docfilesoficial": {
+          "followers": 81793,
+          "posts": 706,
+          "crecimiento": null
+        },
+        "lorenapizarrosierra": {
+          "followers": 16790,
+          "posts": 1815,
+          "crecimiento": null
+        },
+        "diputadocesarvalenzuela": {
+          "followers": 24784,
+          "posts": 372,
+          "crecimiento": null
+        },
+        "cristianarayal": {
+          "followers": 33924,
+          "posts": 2077,
+          "crecimiento": null
+        },
+        "ximenaossandon.oficial": {
+          "followers": 17000,
+          "posts": 2441,
+          "crecimiento": null
+        },
+        "claudiapascualsenadora": {
+          "followers": 24017,
+          "posts": 3150,
+          "crecimiento": null
+        },
+        "lorena.fries": {
+          "followers": 24499,
+          "posts": 1486,
+          "crecimiento": null
+        },
+        "diputadoeduardoduran": {
+          "followers": 4633,
+          "posts": 1053,
+          "crecimiento": null
+        },
+        "zandraparisi_": {
+          "followers": 11828,
+          "posts": 616,
+          "crecimiento": null
+        },
+        "lcruzcoke": {
+          "followers": 68149,
+          "posts": 1243,
+          "crecimiento": null
+        },
+        "iraci.hassler": {
+          "followers": 167156,
+          "posts": 5368,
+          "crecimiento": null
+        },
+        "diego_schalper": {
+          "followers": 64727,
+          "posts": 4520,
+          "crecimiento": null
+        },
+        "fabiolacampillai_senadora": {
+          "followers": 80104,
+          "posts": 1734,
+          "crecimiento": null
+        },
+        "gonzalo.winter": {
+          "followers": 411320,
+          "posts": 2541,
+          "crecimiento": null
+        },
+        "gustavogaticav": {
+          "followers": 137603,
+          "posts": 451,
+          "crecimiento": null
+        },
+        "conyschon": {
+          "followers": 47181,
+          "posts": 1695,
+          "crecimiento": null
+        }
+      },
       "accounts": [
         {
           "handle": "pierkarlezinadietv",
@@ -8134,6 +8658,268 @@
       "days": 30,
       "snapshotsEnVentana": 5,
       "hasGrowth": true,
+      "instagram": {
+        "tamararamirezdiputada": {
+          "followers": 2014,
+          "posts": 377,
+          "crecimiento": null
+        },
+        "pamelajilesdiputada": {
+          "followers": 370559,
+          "posts": 2209,
+          "crecimiento": null
+        },
+        "diego_vergara_diputado": {
+          "followers": 7350,
+          "posts": 691,
+          "crecimiento": null
+        },
+        "josemezapereira": {
+          "followers": 15447,
+          "posts": 2356,
+          "crecimiento": null
+        },
+        "jaimecolomat": {
+          "followers": 74366,
+          "posts": 6424,
+          "crecimiento": null
+        },
+        "jorge_alessandri": {
+          "followers": 83896,
+          "posts": 3688,
+          "crecimiento": null
+        },
+        "pancho.orregog": {
+          "followers": 256263,
+          "posts": 858,
+          "crecimiento": null
+        },
+        "juanirarrazavaldiputado": {
+          "followers": 9270,
+          "posts": 1744,
+          "crecimiento": null
+        },
+        "raulleivacarvajal": {
+          "followers": 21663,
+          "posts": 3303,
+          "crecimiento": null
+        },
+        "jakastadriasola": {
+          "followers": 64311,
+          "posts": 396,
+          "crecimiento": null
+        },
+        "hans_marowski": {
+          "followers": 14037,
+          "posts": 477,
+          "crecimiento": null
+        },
+        "ebassaletti": {
+          "followers": 22845,
+          "posts": 715,
+          "crecimiento": null
+        },
+        "capitanarod": {
+          "followers": 73151,
+          "posts": 1575,
+          "crecimiento": null
+        },
+        "mariseka": {
+          "followers": 206102,
+          "posts": 6725,
+          "crecimiento": null
+        },
+        "emischneiderv": {
+          "followers": 101417,
+          "posts": 1403,
+          "crecimiento": null
+        },
+        "guillermoramirezdiez": {
+          "followers": 44241,
+          "posts": 2601,
+          "crecimiento": null
+        },
+        "anamariagazmuriv": {
+          "followers": 102548,
+          "posts": 3912,
+          "crecimiento": null
+        },
+        "claudiamoradiputada": {
+          "followers": 6299,
+          "posts": 1082,
+          "crecimiento": null
+        },
+        "alvaro_carter_fernandez": {
+          "followers": 30394,
+          "posts": 569,
+          "crecimiento": null
+        },
+        "marcosbarrazag": {
+          "followers": 14844,
+          "posts": 1418,
+          "crecimiento": null
+        },
+        "cuadradoprats": {
+          "followers": 7571,
+          "posts": 810,
+          "crecimiento": null
+        },
+        "catadelrealcl": {
+          "followers": 14245,
+          "posts": 945,
+          "crecimiento": null
+        },
+        "rojoedwards": {
+          "followers": 27655,
+          "posts": 1677,
+          "crecimiento": null
+        },
+        "pierkarlezi": {
+          "followers": 59466,
+          "posts": 1010,
+          "crecimiento": null
+        },
+        "valebecerra.cl": {
+          "followers": 32377,
+          "posts": 635,
+          "crecimiento": null
+        },
+        "gaelyeomans": {
+          "followers": 80172,
+          "posts": 2434,
+          "crecimiento": null
+        },
+        "ignacioachurra": {
+          "followers": 177266,
+          "posts": 529,
+          "crecimiento": null
+        },
+        "diputadoborisbarrera": {
+          "followers": 24013,
+          "posts": 4971,
+          "crecimiento": null
+        },
+        "constanzahube": {
+          "followers": 91823,
+          "posts": 1261,
+          "crecimiento": null
+        },
+        "manueljoseossandon": {
+          "followers": 42723,
+          "posts": 1774,
+          "crecimiento": null
+        },
+        "felipeross.cl": {
+          "followers": 7283,
+          "posts": 476,
+          "crecimiento": null
+        },
+        "maca_santelices": {
+          "followers": 80546,
+          "posts": 1305,
+          "crecimiento": null
+        },
+        "tatiurru": {
+          "followers": 19904,
+          "posts": 3161,
+          "crecimiento": null
+        },
+        "agustinromerodiputado": {
+          "followers": 16086,
+          "posts": 3218,
+          "crecimiento": null
+        },
+        "danielaserranosalazar": {
+          "followers": 24794,
+          "posts": 2737,
+          "crecimiento": null
+        },
+        "mario.olavarria.diputado": {
+          "followers": 8751,
+          "posts": 633,
+          "crecimiento": null
+        },
+        "docfilesoficial": {
+          "followers": 81793,
+          "posts": 706,
+          "crecimiento": null
+        },
+        "lorenapizarrosierra": {
+          "followers": 16790,
+          "posts": 1815,
+          "crecimiento": null
+        },
+        "diputadocesarvalenzuela": {
+          "followers": 24784,
+          "posts": 372,
+          "crecimiento": null
+        },
+        "cristianarayal": {
+          "followers": 33924,
+          "posts": 2077,
+          "crecimiento": null
+        },
+        "ximenaossandon.oficial": {
+          "followers": 17000,
+          "posts": 2441,
+          "crecimiento": null
+        },
+        "claudiapascualsenadora": {
+          "followers": 24017,
+          "posts": 3150,
+          "crecimiento": null
+        },
+        "lorena.fries": {
+          "followers": 24499,
+          "posts": 1486,
+          "crecimiento": null
+        },
+        "diputadoeduardoduran": {
+          "followers": 4633,
+          "posts": 1053,
+          "crecimiento": null
+        },
+        "zandraparisi_": {
+          "followers": 11828,
+          "posts": 616,
+          "crecimiento": null
+        },
+        "lcruzcoke": {
+          "followers": 68149,
+          "posts": 1243,
+          "crecimiento": null
+        },
+        "iraci.hassler": {
+          "followers": 167156,
+          "posts": 5368,
+          "crecimiento": null
+        },
+        "diego_schalper": {
+          "followers": 64727,
+          "posts": 4520,
+          "crecimiento": null
+        },
+        "fabiolacampillai_senadora": {
+          "followers": 80104,
+          "posts": 1734,
+          "crecimiento": null
+        },
+        "gonzalo.winter": {
+          "followers": 411320,
+          "posts": 2541,
+          "crecimiento": null
+        },
+        "gustavogaticav": {
+          "followers": 137603,
+          "posts": 451,
+          "crecimiento": null
+        },
+        "conyschon": {
+          "followers": 47181,
+          "posts": 1695,
+          "crecimiento": null
+        }
+      },
       "accounts": [
         {
           "handle": "pierkarlezinadietv",

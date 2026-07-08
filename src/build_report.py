@@ -199,6 +199,8 @@ def calcular_ventana(snapshots: list[dict], dias: int, metadata: dict,
         "days": dias,
         "snapshotsEnVentana": len(en_ventana),
         "hasGrowth": hay_crecimiento,
+        # perfiles IG por handle de la ventana (incluye legisladores sin TikTok)
+        "instagram": ig,
         "accounts": cuentas,
         "insights": generar_insights(cuentas, dias),
         "alertas": generar_alertas(cuentas),
