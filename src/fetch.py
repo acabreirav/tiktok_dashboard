@@ -36,7 +36,9 @@ ACTOR = "clockworks/tiktok-profile-scraper"
 
 # Tope duro para proteger la cuota de Apify (ver CLAUDE.md §12, Fase 7):
 # el fetch se niega a correr si hay más cuentas activas que esto.
-MAX_CUENTAS = 30
+# Subido 30→60 el 2026-07-08 al ampliar a RM completa (decisión de Álvaro
+# de costear el crédito extra; ~40 cuentas semanales ≈ $4.5-5/mes).
+MAX_CUENTAS = 60
 
 
 def cargar_cuentas() -> list[str]:
