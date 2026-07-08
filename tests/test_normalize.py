@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
-from normalize import normalizar_items
+from normalize import normalizar_ig, normalizar_items
 
 
 def item_crudo(handle="cuenta.demo", video_id="v1", fans=1000, **extra):
@@ -58,6 +58,31 @@ def test_mapea_campos_del_actor_al_esquema_interno():
     assert video["shares"] == 32
     assert video["postedAt"] == "2026-07-05T14:00:08.000Z"
     assert video["caption"] == "caption de prueba 🐘"
+
+
+def test_normalizar_ig_mapea_campos_del_actor():
+    items = [{
+        "username": "cuenta.demo", "followersCount": 45000,
+        "followsCount": 300, "postsCount": 120, "verified": True,
+    }]
+    snap = normalizar_ig(items, "2026-07-08T00:00Z")
+    perfil = snap["profiles"][0]
+    assert perfil["handle"] == "cuenta.demo"
+    assert perfil["followers"] == 45000
+    assert perfil["posts"] == 120
+    assert perfil["verified"] is True
+    assert snap["errors"] == []
+
+
+def test_normalizar_ig_registra_errores_sin_abortar():
+    items = [
+        {"username": "ok", "followersCount": 10},
+        {"inputUrl": "https://instagram.com/borrada", "error": "not found"},
+    ]
+    snap = normalizar_ig(items, "2026-07-08T00:00Z")
+    assert len(snap["profiles"]) == 1
+    assert len(snap["errors"]) == 1
+    assert "borrada" in snap["errors"][0]
 
 
 def test_item_con_error_no_aborta_y_queda_registrado():

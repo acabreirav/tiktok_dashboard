@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T02:48:11Z",
+  "generatedAt": "2026-07-08T14:35:46Z",
   "snapshots": {
     "count": 5,
     "first": "2026-07-07T03:39:00Z",
@@ -13,7 +13,8 @@
       "partido": "FA",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "gonzalowinter"
+      "handle": "gonzalowinter",
+      "handleInstagram": null
     },
     {
       "nombre": "Emilia Schneider",
@@ -22,7 +23,8 @@
       "partido": "FA",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "emiliaschneiderv"
+      "handle": "emiliaschneiderv",
+      "handleInstagram": null
     },
     {
       "nombre": "Lorena Fries",
@@ -31,7 +33,8 @@
       "partido": "FA",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "lorenafriesm"
+      "handle": "lorenafriesm",
+      "handleInstagram": null
     },
     {
       "nombre": "Iraci Hassler",
@@ -40,7 +43,8 @@
       "partido": "PC",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "iracihassler"
+      "handle": "iracihassler",
+      "handleInstagram": null
     },
     {
       "nombre": "Jorge Alessandri",
@@ -49,7 +53,8 @@
       "partido": "UDI",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "jorgealessandridiputado"
+      "handle": "jorgealessandridiputado",
+      "handleInstagram": null
     },
     {
       "nombre": "Francisco Orrego",
@@ -58,7 +63,8 @@
       "partido": "RN",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "pancho.orregog"
+      "handle": "pancho.orregog",
+      "handleInstagram": null
     },
     {
       "nombre": "Jose Antonio Kast Adriasola",
@@ -67,7 +73,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "jakastadriasola"
+      "handle": "jakastadriasola",
+      "handleInstagram": null
     },
     {
       "nombre": "Hans Marowski",
@@ -76,7 +83,8 @@
       "partido": "PNL",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "hans_marowski"
+      "handle": "hans_marowski",
+      "handleInstagram": null
     },
     {
       "nombre": "Constanza Schonhaut",
@@ -85,7 +93,8 @@
       "partido": "FA",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "conyschons"
+      "handle": "conyschons",
+      "handleInstagram": null
     },
     {
       "nombre": "Diego Schalper",
@@ -94,7 +103,8 @@
       "partido": "RN",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "diegoschalper"
+      "handle": "diegoschalper",
+      "handleInstagram": null
     },
     {
       "nombre": "Claudia Mora",
@@ -103,7 +113,8 @@
       "partido": "RN",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "claudiamoradistrito11"
+      "handle": "claudiamoradistrito11",
+      "handleInstagram": null
     },
     {
       "nombre": "Constanza Hube",
@@ -112,7 +123,8 @@
       "partido": "UDI",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "conihube"
+      "handle": "conihube",
+      "handleInstagram": null
     },
     {
       "nombre": "Cristian Araya",
@@ -121,7 +133,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "cristianarayal"
+      "handle": "cristianarayal",
+      "handleInstagram": null
     },
     {
       "nombre": "Catalina Del Real",
@@ -130,7 +143,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "catadelrealcl"
+      "handle": "catadelrealcl",
+      "handleInstagram": null
     },
     {
       "nombre": "Gael Yeomans",
@@ -139,7 +153,8 @@
       "partido": "FA",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "gaelyeomans"
+      "handle": "gaelyeomans",
+      "handleInstagram": null
     },
     {
       "nombre": "Lorena Pizarro",
@@ -148,7 +163,8 @@
       "partido": "PC",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "lorenapizarrosierra"
+      "handle": "lorenapizarrosierra",
+      "handleInstagram": null
     },
     {
       "nombre": "Eduardo Duran",
@@ -157,7 +173,8 @@
       "partido": "RN",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "diputadoeduardoduran"
+      "handle": "diputadoeduardoduran",
+      "handleInstagram": null
     },
     {
       "nombre": "Felipe Ross",
@@ -166,7 +183,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "feliperossco"
+      "handle": "feliperossco",
+      "handleInstagram": null
     },
     {
       "nombre": "Valentina Becerra",
@@ -175,7 +193,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "valebecerra.cl"
+      "handle": "valebecerra.cl",
+      "handleInstagram": null
     },
     {
       "nombre": "Fabiola Campillai",
@@ -184,7 +203,8 @@
       "partido": "IND",
       "coalicion": "independiente",
       "sector": "oposicion",
-      "handle": "dignidadfabiola"
+      "handle": "dignidadfabiola",
+      "handleInstagram": null
     },
     {
       "nombre": "Claudia Pascual",
@@ -193,7 +213,8 @@
       "partido": "PC",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": null
+      "handle": null,
+      "handleInstagram": null
     },
     {
       "nombre": "Manuel Jose Ossandon",
@@ -202,7 +223,8 @@
       "partido": "RN",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "manueljoseossandon"
+      "handle": "manueljoseossandon",
+      "handleInstagram": null
     },
     {
       "nombre": "Luciano Cruz-Coke",
@@ -211,7 +233,8 @@
       "partido": "Evopoli",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "lcruzcoke"
+      "handle": "lcruzcoke",
+      "handleInstagram": null
     },
     {
       "nombre": "Rojo Edwards",
@@ -220,7 +243,8 @@
       "partido": "PSC",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "rojo.edwards"
+      "handle": "rojo.edwards",
+      "handleInstagram": null
     },
     {
       "nombre": "Gustavo Gatica",
@@ -229,7 +253,8 @@
       "partido": "PC",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "gustavogaticav"
+      "handle": "gustavogaticav",
+      "handleInstagram": null
     },
     {
       "nombre": "Marcos Barraza",
@@ -238,7 +263,8 @@
       "partido": "PC",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": null
+      "handle": null,
+      "handleInstagram": null
     },
     {
       "nombre": "Tatiana Urrutia",
@@ -247,7 +273,8 @@
       "partido": "FA",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "tatiurru"
+      "handle": "tatiurru",
+      "handleInstagram": null
     },
     {
       "nombre": "Cristian Contreras",
@@ -256,7 +283,8 @@
       "partido": "PDG",
       "coalicion": "PDG",
       "sector": "neutro",
-      "handle": "cristiancontrerasradovic"
+      "handle": "cristiancontrerasradovic",
+      "handleInstagram": null
     },
     {
       "nombre": "Agustin Romero",
@@ -265,7 +293,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "agustinromerodiputado"
+      "handle": "agustinromerodiputado",
+      "handleInstagram": null
     },
     {
       "nombre": "Enrique Bassaletti",
@@ -274,7 +303,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "ebassaletti"
+      "handle": "ebassaletti",
+      "handleInstagram": null
     },
     {
       "nombre": "Pier Karlezi",
@@ -283,7 +313,8 @@
       "partido": "PNL",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "pierkarlezinadietv"
+      "handle": "pierkarlezinadietv",
+      "handleInstagram": null
     },
     {
       "nombre": "Mario Olavarria",
@@ -292,7 +323,8 @@
       "partido": "UDI",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "marioolavarriadiputadod8"
+      "handle": "marioolavarriadiputadod8",
+      "handleInstagram": null
     },
     {
       "nombre": "Carlos Cuadrado",
@@ -301,7 +333,8 @@
       "partido": "PPD",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "carloscuadradoprats"
+      "handle": "carloscuadradoprats",
+      "handleInstagram": null
     },
     {
       "nombre": "Boris Barrera",
@@ -310,7 +343,8 @@
       "partido": "PC",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "diputadoborisbarrera_"
+      "handle": "diputadoborisbarrera_",
+      "handleInstagram": null
     },
     {
       "nombre": "Jose Carlos Meza",
@@ -319,7 +353,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "josemezapereira"
+      "handle": "josemezapereira",
+      "handleInstagram": null
     },
     {
       "nombre": "Javiera Rodriguez",
@@ -328,7 +363,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "capitanarod"
+      "handle": "capitanarod",
+      "handleInstagram": null
     },
     {
       "nombre": "Tamara Ramirez",
@@ -337,7 +373,8 @@
       "partido": "PDG",
       "coalicion": "PDG",
       "sector": "neutro",
-      "handle": "tamaraa.ramirez"
+      "handle": "tamaraa.ramirez",
+      "handleInstagram": null
     },
     {
       "nombre": "Cesar Valenzuela",
@@ -346,7 +383,8 @@
       "partido": "PS",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "diputadocesarvalenzuela"
+      "handle": "diputadocesarvalenzuela",
+      "handleInstagram": null
     },
     {
       "nombre": "Guillermo Ramirez",
@@ -355,7 +393,8 @@
       "partido": "UDI",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "guillermoramirezdiputado"
+      "handle": "guillermoramirezdiputado",
+      "handleInstagram": null
     },
     {
       "nombre": "Pamela Jiles",
@@ -364,7 +403,8 @@
       "partido": "PDG",
       "coalicion": "PDG",
       "sector": "neutro",
-      "handle": "pamelajilestv"
+      "handle": "pamelajilestv",
+      "handleInstagram": null
     },
     {
       "nombre": "Ana Maria Gazmuri",
@@ -373,7 +413,8 @@
       "partido": "AH",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "anamariagazmuriv"
+      "handle": "anamariagazmuriv",
+      "handleInstagram": null
     },
     {
       "nombre": "Alvaro Carter",
@@ -382,7 +423,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "diputado_alvaro_carter"
+      "handle": "diputado_alvaro_carter",
+      "handleInstagram": null
     },
     {
       "nombre": "Ximena Ossandon",
@@ -391,7 +433,8 @@
       "partido": "RN",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "ximenaossandon.oficial"
+      "handle": "ximenaossandon.oficial",
+      "handleInstagram": null
     },
     {
       "nombre": "Daniela Serrano",
@@ -400,7 +443,8 @@
       "partido": "PC",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "danielaserranosalazar"
+      "handle": "danielaserranosalazar",
+      "handleInstagram": null
     },
     {
       "nombre": "Zandra Parisi",
@@ -409,7 +453,8 @@
       "partido": "PDG",
       "coalicion": "PDG",
       "sector": "neutro",
-      "handle": "_zandraparisi"
+      "handle": "_zandraparisi",
+      "handleInstagram": null
     },
     {
       "nombre": "Macarena Santelices",
@@ -418,7 +463,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "macasantelices"
+      "handle": "macasantelices",
+      "handleInstagram": null
     },
     {
       "nombre": "Raul Leiva",
@@ -427,7 +473,8 @@
       "partido": "PS",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "diputadoraulleiva"
+      "handle": "diputadoraulleiva",
+      "handleInstagram": null
     },
     {
       "nombre": "Marisela Santibanez",
@@ -436,7 +483,8 @@
       "partido": "PC",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": null
+      "handle": null,
+      "handleInstagram": null
     },
     {
       "nombre": "Ignacio Achurra",
@@ -445,7 +493,8 @@
       "partido": "FA",
       "coalicion": "Unidad por Chile",
       "sector": "oposicion",
-      "handle": "ignacio.achurra"
+      "handle": "ignacio.achurra",
+      "handleInstagram": null
     },
     {
       "nombre": "Jaime Coloma",
@@ -454,7 +503,8 @@
       "partido": "UDI",
       "coalicion": "Chile Grande y Unido",
       "sector": "gobierno",
-      "handle": "colomajaime"
+      "handle": "colomajaime",
+      "handleInstagram": null
     },
     {
       "nombre": "Juan Irarrazaval",
@@ -463,7 +513,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "juan.irarrzaval.r"
+      "handle": "juan.irarrzaval.r",
+      "handleInstagram": null
     },
     {
       "nombre": "Diego Vergara",
@@ -472,7 +523,8 @@
       "partido": "REP",
       "coalicion": "Cambio por Chile",
       "sector": "gobierno",
-      "handle": "diego_vergara_dip"
+      "handle": "diego_vergara_dip",
+      "handleInstagram": null
     }
   ],
   "windows": {
@@ -489,8 +541,10 @@
             "territorio": "D8",
             "partido": "PNL",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 38600,
           "crecimiento": null,
@@ -552,8 +606,10 @@
             "territorio": "D9",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 252,
           "crecimiento": null,
@@ -615,8 +671,10 @@
             "territorio": "D9",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 21200,
           "crecimiento": null,
@@ -678,8 +736,10 @@
             "territorio": "D9",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 57800,
           "crecimiento": null,
@@ -741,8 +801,10 @@
             "territorio": "D8",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 66100,
           "crecimiento": null,
@@ -804,8 +866,10 @@
             "territorio": "D8",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1001,
           "crecimiento": null,
@@ -882,8 +946,10 @@
             "territorio": "D8",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 22700,
           "crecimiento": null,
@@ -945,8 +1011,10 @@
             "territorio": "D9",
             "partido": "PPD",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 42,
           "crecimiento": null,
@@ -1008,8 +1076,10 @@
             "territorio": "D8",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1333,
           "crecimiento": null,
@@ -1071,8 +1141,10 @@
             "territorio": "D9",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2933,
           "crecimiento": null,
@@ -1134,8 +1206,10 @@
             "territorio": "D9",
             "partido": "PS",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 6091,
           "crecimiento": null,
@@ -1197,8 +1271,10 @@
             "territorio": "D9",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 54000,
           "crecimiento": null,
@@ -1260,8 +1336,10 @@
             "territorio": "D12",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 123000,
           "crecimiento": null,
@@ -1323,8 +1401,10 @@
             "territorio": "D12",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3255,
           "crecimiento": null,
@@ -1386,8 +1466,10 @@
             "territorio": "D12",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 5973,
           "crecimiento": null,
@@ -1449,8 +1531,10 @@
             "territorio": "D12",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3016,
           "crecimiento": null,
@@ -1512,8 +1596,10 @@
             "territorio": "D12",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 7489,
           "crecimiento": null,
@@ -1575,8 +1661,10 @@
             "territorio": "D12",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 65200,
           "crecimiento": null,
@@ -1638,8 +1726,10 @@
             "territorio": "D14",
             "partido": "PS",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 5133,
           "crecimiento": null,
@@ -1709,8 +1799,10 @@
             "territorio": "D14",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 25000,
           "crecimiento": null,
@@ -1801,8 +1893,10 @@
             "territorio": "D14",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 6870,
           "crecimiento": null,
@@ -1864,8 +1958,10 @@
             "territorio": "D14",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2384,
           "crecimiento": null,
@@ -1927,8 +2023,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 193800,
           "crecimiento": {
@@ -2005,8 +2103,10 @@
             "territorio": "D14",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 4108,
           "crecimiento": null,
@@ -2068,8 +2168,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 36000,
           "crecimiento": {
@@ -2138,8 +2240,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 4926,
           "crecimiento": {
@@ -2216,8 +2320,10 @@
             "territorio": "D10",
             "partido": "PNL",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 42,
           "crecimiento": {
@@ -2286,8 +2392,10 @@
             "territorio": "D10",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 199900,
           "crecimiento": {
@@ -2356,8 +2464,10 @@
             "territorio": "D10",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 38700,
           "crecimiento": {
@@ -2426,8 +2536,10 @@
             "territorio": "D10",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2411,
           "crecimiento": {
@@ -2496,8 +2608,10 @@
             "territorio": "D10",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 111500,
           "crecimiento": {
@@ -2566,8 +2680,10 @@
             "territorio": "D11",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 18800,
           "crecimiento": {
@@ -2636,8 +2752,10 @@
             "territorio": "D11",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1602,
           "crecimiento": {
@@ -2706,8 +2824,10 @@
             "territorio": "D11",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1505,
           "crecimiento": {
@@ -2776,8 +2896,10 @@
             "territorio": "D11",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 16400,
           "crecimiento": {
@@ -2846,8 +2968,10 @@
             "territorio": "D13",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 31500,
           "crecimiento": {
@@ -2939,8 +3063,10 @@
             "territorio": "D11",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 80300,
           "crecimiento": {
@@ -3009,8 +3135,10 @@
             "territorio": "D13",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2664,
           "crecimiento": {
@@ -3079,8 +3207,10 @@
             "territorio": "D13",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2380,
           "crecimiento": {
@@ -3149,8 +3279,10 @@
             "territorio": "D13",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 97,
           "crecimiento": {
@@ -3219,8 +3351,10 @@
             "territorio": "D13",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 133600,
           "crecimiento": {
@@ -3289,8 +3423,10 @@
             "territorio": "RM",
             "partido": "Evopoli",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 894,
           "crecimiento": {
@@ -3341,8 +3477,10 @@
             "territorio": "RM",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2492,
           "crecimiento": {
@@ -3411,8 +3549,10 @@
             "territorio": "RM",
             "partido": "IND",
             "coalicion": "independiente",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3622,
           "crecimiento": {
@@ -3481,8 +3621,10 @@
             "territorio": "D8",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1545,
           "crecimiento": null,
@@ -3552,8 +3694,10 @@
             "territorio": "RM",
             "partido": "PSC",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 73000,
           "crecimiento": {
@@ -3622,8 +3766,10 @@
             "territorio": "D11",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 12600,
           "crecimiento": {
@@ -3700,8 +3846,10 @@
             "territorio": "D12",
             "partido": "AH",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 8380,
           "crecimiento": null,
@@ -3763,8 +3911,10 @@
             "territorio": "D8",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 8250,
           "crecimiento": null,
@@ -3943,8 +4093,10 @@
             "territorio": "D8",
             "partido": "PNL",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 38600,
           "crecimiento": null,
@@ -4021,8 +4173,10 @@
             "territorio": "D9",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 252,
           "crecimiento": null,
@@ -4084,8 +4238,10 @@
             "territorio": "D9",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 21200,
           "crecimiento": null,
@@ -4147,8 +4303,10 @@
             "territorio": "D9",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 57800,
           "crecimiento": null,
@@ -4218,8 +4376,10 @@
             "territorio": "D8",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 66100,
           "crecimiento": null,
@@ -4281,8 +4441,10 @@
             "territorio": "D8",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1001,
           "crecimiento": null,
@@ -4359,8 +4521,10 @@
             "territorio": "D8",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 22700,
           "crecimiento": null,
@@ -4422,8 +4586,10 @@
             "territorio": "D9",
             "partido": "PPD",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 42,
           "crecimiento": null,
@@ -4485,8 +4651,10 @@
             "territorio": "D8",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1333,
           "crecimiento": null,
@@ -4548,8 +4716,10 @@
             "territorio": "D9",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2933,
           "crecimiento": null,
@@ -4611,8 +4781,10 @@
             "territorio": "D9",
             "partido": "PS",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 6091,
           "crecimiento": null,
@@ -4682,8 +4854,10 @@
             "territorio": "D9",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 54000,
           "crecimiento": null,
@@ -4745,8 +4919,10 @@
             "territorio": "D12",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 123000,
           "crecimiento": null,
@@ -4808,8 +4984,10 @@
             "territorio": "D12",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3255,
           "crecimiento": null,
@@ -4871,8 +5049,10 @@
             "territorio": "D12",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 5973,
           "crecimiento": null,
@@ -4934,8 +5114,10 @@
             "territorio": "D12",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3016,
           "crecimiento": null,
@@ -4997,8 +5179,10 @@
             "territorio": "D12",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 7489,
           "crecimiento": null,
@@ -5060,8 +5244,10 @@
             "territorio": "D12",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 65200,
           "crecimiento": null,
@@ -5123,8 +5309,10 @@
             "territorio": "D14",
             "partido": "PS",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 5133,
           "crecimiento": null,
@@ -5201,8 +5389,10 @@
             "territorio": "D14",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 25000,
           "crecimiento": null,
@@ -5293,8 +5483,10 @@
             "territorio": "D14",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 6870,
           "crecimiento": null,
@@ -5356,8 +5548,10 @@
             "territorio": "D14",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2384,
           "crecimiento": null,
@@ -5419,8 +5613,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 193800,
           "crecimiento": {
@@ -5512,8 +5708,10 @@
             "territorio": "D14",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 4108,
           "crecimiento": null,
@@ -5575,8 +5773,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 36000,
           "crecimiento": {
@@ -5645,8 +5845,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 4926,
           "crecimiento": {
@@ -5723,8 +5925,10 @@
             "territorio": "D10",
             "partido": "PNL",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 42,
           "crecimiento": {
@@ -5793,8 +5997,10 @@
             "territorio": "D10",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 199900,
           "crecimiento": {
@@ -5863,8 +6069,10 @@
             "territorio": "D10",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 38700,
           "crecimiento": {
@@ -5933,8 +6141,10 @@
             "territorio": "D10",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2411,
           "crecimiento": {
@@ -6003,8 +6213,10 @@
             "territorio": "D10",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 111500,
           "crecimiento": {
@@ -6073,8 +6285,10 @@
             "territorio": "D11",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 18800,
           "crecimiento": {
@@ -6143,8 +6357,10 @@
             "territorio": "D11",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1602,
           "crecimiento": {
@@ -6213,8 +6429,10 @@
             "territorio": "D11",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1505,
           "crecimiento": {
@@ -6283,8 +6501,10 @@
             "territorio": "D11",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 16400,
           "crecimiento": {
@@ -6353,8 +6573,10 @@
             "territorio": "D13",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 31500,
           "crecimiento": {
@@ -6446,8 +6668,10 @@
             "territorio": "D11",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 80300,
           "crecimiento": {
@@ -6516,8 +6740,10 @@
             "territorio": "D13",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2664,
           "crecimiento": {
@@ -6586,8 +6812,10 @@
             "territorio": "D13",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2380,
           "crecimiento": {
@@ -6656,8 +6884,10 @@
             "territorio": "D13",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 97,
           "crecimiento": {
@@ -6726,8 +6956,10 @@
             "territorio": "D13",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 133600,
           "crecimiento": {
@@ -6796,8 +7028,10 @@
             "territorio": "RM",
             "partido": "Evopoli",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 894,
           "crecimiento": {
@@ -6848,8 +7082,10 @@
             "territorio": "RM",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2492,
           "crecimiento": {
@@ -6918,8 +7154,10 @@
             "territorio": "RM",
             "partido": "IND",
             "coalicion": "independiente",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3622,
           "crecimiento": {
@@ -6988,8 +7226,10 @@
             "territorio": "D8",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1545,
           "crecimiento": null,
@@ -7059,8 +7299,10 @@
             "territorio": "RM",
             "partido": "PSC",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 73000,
           "crecimiento": {
@@ -7129,8 +7371,10 @@
             "territorio": "D11",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 12600,
           "crecimiento": {
@@ -7215,8 +7459,10 @@
             "territorio": "D12",
             "partido": "AH",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 8380,
           "crecimiento": null,
@@ -7278,8 +7524,10 @@
             "territorio": "D8",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 8250,
           "crecimiento": null,
@@ -7503,8 +7751,10 @@
             "territorio": "D8",
             "partido": "PNL",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 38600,
           "crecimiento": null,
@@ -7581,8 +7831,10 @@
             "territorio": "D9",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 252,
           "crecimiento": null,
@@ -7644,8 +7896,10 @@
             "territorio": "D9",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 21200,
           "crecimiento": null,
@@ -7715,8 +7969,10 @@
             "territorio": "D9",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 57800,
           "crecimiento": null,
@@ -7786,8 +8042,10 @@
             "territorio": "D8",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 66100,
           "crecimiento": null,
@@ -7849,8 +8107,10 @@
             "territorio": "D8",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1001,
           "crecimiento": null,
@@ -7934,8 +8194,10 @@
             "territorio": "D8",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 22700,
           "crecimiento": null,
@@ -7997,8 +8259,10 @@
             "territorio": "D9",
             "partido": "PPD",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 42,
           "crecimiento": null,
@@ -8060,8 +8324,10 @@
             "territorio": "D8",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1333,
           "crecimiento": null,
@@ -8123,8 +8389,10 @@
             "territorio": "D9",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2933,
           "crecimiento": null,
@@ -8194,8 +8462,10 @@
             "territorio": "D9",
             "partido": "PS",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 6091,
           "crecimiento": null,
@@ -8265,8 +8535,10 @@
             "territorio": "D9",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 54000,
           "crecimiento": null,
@@ -8328,8 +8600,10 @@
             "territorio": "D12",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 123000,
           "crecimiento": null,
@@ -8399,8 +8673,10 @@
             "territorio": "D12",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3255,
           "crecimiento": null,
@@ -8477,8 +8753,10 @@
             "territorio": "D12",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 5973,
           "crecimiento": null,
@@ -8540,8 +8818,10 @@
             "territorio": "D12",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3016,
           "crecimiento": null,
@@ -8625,8 +8905,10 @@
             "territorio": "D12",
             "partido": "PDG",
             "coalicion": "PDG",
-            "sector": "neutro"
+            "sector": "neutro",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 7489,
           "crecimiento": null,
@@ -8688,8 +8970,10 @@
             "territorio": "D12",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 65200,
           "crecimiento": null,
@@ -8751,8 +9035,10 @@
             "territorio": "D14",
             "partido": "PS",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 5133,
           "crecimiento": null,
@@ -8829,8 +9115,10 @@
             "territorio": "D14",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 25000,
           "crecimiento": null,
@@ -8921,8 +9209,10 @@
             "territorio": "D14",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 6870,
           "crecimiento": null,
@@ -8984,8 +9274,10 @@
             "territorio": "D14",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2384,
           "crecimiento": null,
@@ -9047,8 +9339,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 193800,
           "crecimiento": {
@@ -9147,8 +9441,10 @@
             "territorio": "D14",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 4108,
           "crecimiento": null,
@@ -9210,8 +9506,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 36000,
           "crecimiento": {
@@ -9280,8 +9578,10 @@
             "territorio": "D10",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 4926,
           "crecimiento": {
@@ -9372,8 +9672,10 @@
             "territorio": "D10",
             "partido": "PNL",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 42,
           "crecimiento": {
@@ -9442,8 +9744,10 @@
             "territorio": "D10",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 199900,
           "crecimiento": {
@@ -9512,8 +9816,10 @@
             "territorio": "D10",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 38700,
           "crecimiento": {
@@ -9597,8 +9903,10 @@
             "territorio": "D10",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2411,
           "crecimiento": {
@@ -9667,8 +9975,10 @@
             "territorio": "D10",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 111500,
           "crecimiento": {
@@ -9737,8 +10047,10 @@
             "territorio": "D11",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 18800,
           "crecimiento": {
@@ -9807,8 +10119,10 @@
             "territorio": "D11",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1602,
           "crecimiento": {
@@ -9877,8 +10191,10 @@
             "territorio": "D11",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1505,
           "crecimiento": {
@@ -9947,8 +10263,10 @@
             "territorio": "D11",
             "partido": "UDI",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 16400,
           "crecimiento": {
@@ -10017,8 +10335,10 @@
             "territorio": "D13",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 31500,
           "crecimiento": {
@@ -10110,8 +10430,10 @@
             "territorio": "D11",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 80300,
           "crecimiento": {
@@ -10180,8 +10502,10 @@
             "territorio": "D13",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2664,
           "crecimiento": {
@@ -10250,8 +10574,10 @@
             "territorio": "D13",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2380,
           "crecimiento": {
@@ -10320,8 +10646,10 @@
             "territorio": "D13",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 97,
           "crecimiento": {
@@ -10390,8 +10718,10 @@
             "territorio": "D13",
             "partido": "REP",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 133600,
           "crecimiento": {
@@ -10460,8 +10790,10 @@
             "territorio": "RM",
             "partido": "Evopoli",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 894,
           "crecimiento": {
@@ -10512,8 +10844,10 @@
             "territorio": "RM",
             "partido": "RN",
             "coalicion": "Chile Grande y Unido",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 2492,
           "crecimiento": {
@@ -10582,8 +10916,10 @@
             "territorio": "RM",
             "partido": "IND",
             "coalicion": "independiente",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 3622,
           "crecimiento": {
@@ -10660,8 +10996,10 @@
             "territorio": "D8",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 1545,
           "crecimiento": null,
@@ -10731,8 +11069,10 @@
             "territorio": "RM",
             "partido": "PSC",
             "coalicion": "Cambio por Chile",
-            "sector": "gobierno"
+            "sector": "gobierno",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 73000,
           "crecimiento": {
@@ -10801,8 +11141,10 @@
             "territorio": "D11",
             "partido": "FA",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 12600,
           "crecimiento": {
@@ -10887,8 +11229,10 @@
             "territorio": "D12",
             "partido": "AH",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 8380,
           "crecimiento": null,
@@ -10950,8 +11294,10 @@
             "territorio": "D8",
             "partido": "PC",
             "coalicion": "Unidad por Chile",
-            "sector": "oposicion"
+            "sector": "oposicion",
+            "handleInstagram": null
           },
+          "instagram": null,
           "verified": false,
           "followers": 8250,
           "crecimiento": null,

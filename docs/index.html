@@ -582,6 +582,11 @@ function pintarFicha(){
       <div class="m"><div class="e">Engagement</div><div class="v mono">${c.engagement != null ? fmtD(c.engagement)+"%" : "—"}</div></div>
       <div class="m"><div class="e">Cadencia</div><div class="v mono">${c.cadencia != null ? fmtD(c.cadencia,1)+"/sem" : "—"}</div></div>
       <div class="m"><div class="e">Views/seguidor</div><div class="v mono">${c.viewsPorSeguidor != null ? fmtD(c.viewsPorSeguidor) : "—"}</div></div>
+      <div class="m"><div class="e">Instagram</div><div class="v mono">${
+        c.instagram && c.instagram.followers != null
+          ? fmtC(c.instagram.followers) + (c.instagram.crecimiento?.porcentual != null
+              ? ` <span class="${claseDelta(c.instagram.crecimiento.porcentual)}" style="font-size:12px">${signo(c.instagram.crecimiento.porcentual)}${fmtD(Math.abs(c.instagram.crecimiento.porcentual))}%</span>` : "")
+          : (l.handleInstagram ? "…" : "—")}</div></div>
     </div>
     <div class="ficha-cuerpo">
       <div><h2 style="font-size:13px">Seguidores en el tiempo</h2>${svgSerie}

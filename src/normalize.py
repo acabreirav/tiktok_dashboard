@@ -63,17 +63,50 @@ def normalizar_items(items: list, fecha_iso: str) -> dict:
     return {"date": fecha_iso, "accounts": list(cuentas.values()), "errors": errores}
 
 
-def guardar_snapshot(snapshot: dict, fecha: str) -> Path:
-    """Escribe el snapshot normalizado sin pisar uno existente (el histórico es sagrado)."""
-    CARPETA_SNAPSHOTS.mkdir(parents=True, exist_ok=True)
-    ruta = CARPETA_SNAPSHOTS / f"{fecha}.json"
+def guardar_snapshot(snapshot: dict, fecha: str, carpeta: Path | None = None) -> Path:
+    """Escribe el snapshot normalizado sin pisar uno existente (el histórico es sagrado).
+
+    `carpeta` permite guardar en subcarpetas por red (ej. instagram/)."""
+    destino = carpeta or CARPETA_SNAPSHOTS
+    destino.mkdir(parents=True, exist_ok=True)
+    ruta = destino / f"{fecha}.json"
     n = 2
     while ruta.exists():
-        ruta = CARPETA_SNAPSHOTS / f"{fecha}-{n}.json"
+        ruta = destino / f"{fecha}-{n}.json"
         n += 1
     ruta.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2),
                     encoding="utf-8")
     return ruta
+
+
+def normalizar_ig(items: list, fecha_iso: str) -> dict:
+    """Salida cruda de apify/instagram-profile-scraper → snapshot IG (solo perfil).
+
+    Mapeo defensivo: el esquema exacto se confirma con la primera corrida real
+    (regla del §6) — se leen los nombres de campo conocidos del actor con
+    alternativas, y todo lo no mapeable queda registrado en `errors`.
+    """
+    perfiles: list[dict] = []
+    errores: list[str] = []
+
+    for item in items:
+        handle = item.get("username") or item.get("userName")
+        if not handle or item.get("error"):
+            errores.append(
+                f"item sin username (input={item.get('inputUrl') or item.get('input')!r}, "
+                f"error={item.get('error')!r})"
+            )
+            continue
+        perfiles.append({
+            "handle": handle,
+            "followers": item.get("followersCount", item.get("followers")),
+            "following": item.get("followsCount", item.get("following")),
+            "posts": item.get("postsCount", item.get("posts")),
+            "verified": item.get("verified", False),
+            "private": item.get("private", False),
+        })
+
+    return {"date": fecha_iso, "profiles": perfiles, "errors": errores}
 
 
 def main() -> int:

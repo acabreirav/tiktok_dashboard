@@ -28,6 +28,7 @@ from metrics import (
 
 ROOT = Path(__file__).resolve().parent.parent
 CARPETA_SNAPSHOTS = ROOT / "data" / "snapshots"
+CARPETA_IG = CARPETA_SNAPSHOTS / "instagram"
 RUTA_LEGISLADORES = ROOT / "config" / "legisladores.csv"
 RUTA_SALIDA = ROOT / "docs" / "data.json"
 
@@ -54,6 +55,10 @@ def cargar_roster() -> list[dict]:
                 "sector": f_["sector"],
                 "handle": (h if (h := f_["handle_tiktok"].strip()) not in ("", "sin cuenta")
                            else None),
+                "handleInstagram": (
+                    hi if (hi := f_.get("handle_instagram", "").strip())
+                    not in ("", "sin cuenta") else None
+                ),
             }
             for f_ in filas
         ]
@@ -63,6 +68,48 @@ def cargar_metadata() -> dict[str, dict]:
     """Ficha política por handle (solo quienes tienen cuenta), para el join."""
     return {leg["handle"]: {k: v for k, v in leg.items() if k != "handle"}
             for leg in cargar_roster() if leg["handle"]}
+
+
+def cargar_snapshots_ig() -> list[dict]:
+    """Snapshots de perfil Instagram, ordenados por fecha (puede no haber ninguno)."""
+    if not CARPETA_IG.exists():
+        return []
+    snaps = [json.loads(r.read_text(encoding="utf-8"))
+             for r in sorted(CARPETA_IG.glob("*.json"))]
+    return sorted(snaps, key=lambda s: s["date"])
+
+
+def instagram_por_handle(snapshots_ig: list[dict], fecha_fin: str, dias: int) -> dict:
+    """Seguidores IG actuales + crecimiento de la ventana, por handle de IG.
+
+    Misma lógica de línea base por cuenta que TikTok: primera aparición
+    del handle dentro de la ventana vs el último snapshot IG disponible.
+    """
+    if not snapshots_ig:
+        return {}
+    limite = _ts(fecha_fin) - dias * 86400
+    en_ventana = [s for s in snapshots_ig if _ts(s["date"]) >= limite]
+    if not en_ventana:
+        en_ventana = snapshots_ig[-1:]  # IG puede tener menos historia que TikTok
+    ultimo = en_ventana[-1]
+
+    resultado = {}
+    for perfil in ultimo["profiles"]:
+        handle = perfil["handle"]
+        inicial = next(
+            (p for s in en_ventana for p in s["profiles"]
+             if p["handle"] == handle and s is not ultimo),
+            None,
+        )
+        resultado[handle] = {
+            "followers": perfil.get("followers"),
+            "posts": perfil.get("posts"),
+            "crecimiento": crecimiento_seguidores(
+                inicial.get("followers") if inicial else None,
+                perfil.get("followers") if inicial else None,
+            ),
+        }
+    return resultado
 
 
 def cargar_snapshots() -> list[dict]:
@@ -81,7 +128,8 @@ def _cuenta_en(snapshot: dict, handle: str) -> dict | None:
     return next((c for c in snapshot["accounts"] if c["handle"] == handle), None)
 
 
-def calcular_ventana(snapshots: list[dict], dias: int, metadata: dict) -> dict:
+def calcular_ventana(snapshots: list[dict], dias: int, metadata: dict,
+                     snapshots_ig: list[dict]) -> dict:
     """Métricas de todas las cuentas para una ventana que termina en el
     último snapshot y arranca `dias` antes."""
     ultimo = snapshots[-1]
@@ -91,6 +139,7 @@ def calcular_ventana(snapshots: list[dict], dias: int, metadata: dict) -> dict:
     hay_crecimiento = len(en_ventana) >= 2  # con una sola foto no hay deltas
     fecha_inicio_ventana = datetime.fromtimestamp(limite, tz=timezone.utc) \
         .strftime("%Y-%m-%dT%H:%M:%SZ")
+    ig = instagram_por_handle(snapshots_ig, fecha_fin, dias)
 
     cuentas = []
     for cuenta in ultimo["accounts"]:
@@ -109,9 +158,12 @@ def calcular_ventana(snapshots: list[dict], dias: int, metadata: dict) -> dict:
             for s in en_ventana
             if (c := _cuenta_en(s, handle)) and c["followers"] is not None
         ]
+        meta = metadata.get(handle)
         cuentas.append({
             "handle": handle,
-            "legislador": metadata.get(handle),  # ficha política o null
+            "legislador": meta,  # ficha política o null
+            # presencia en Instagram (solo perfil), si el legislador tiene IG
+            "instagram": ig.get(meta["handleInstagram"]) if meta and meta.get("handleInstagram") else None,
             "verified": cuenta.get("verified", False),
             "followers": cuenta["followers"],
             "crecimiento": crecimiento_seguidores(
@@ -271,7 +323,8 @@ def main() -> int:
         },
         # base completa (incluye "sin cuenta") para cobertura y terreno cedido
         "roster": cargar_roster(),
-        "windows": {str(d): calcular_ventana(snapshots, d, cargar_metadata())
+        "windows": {str(d): calcular_ventana(snapshots, d, cargar_metadata(),
+                                             cargar_snapshots_ig())
                     for d in VENTANAS},
     }
 

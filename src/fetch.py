@@ -23,16 +23,21 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from apify_client import ApifyError, correr_actor
-from normalize import guardar_snapshot, normalizar_items
+from normalize import guardar_snapshot, normalizar_ig, normalizar_items
 
 ROOT = Path(__file__).resolve().parent.parent
 RUTA_LEGISLADORES = ROOT / "config" / "legisladores.csv"
 CARPETA_RAW = ROOT / "data" / "snapshots" / "raw"
+CARPETA_IG = ROOT / "data" / "snapshots" / "instagram"
 
 # Actor elegido como primer candidato (ver CLAUDE.md §6): devuelve perfil
 # y videos recientes en una sola corrida. Si el test muestra mala salida
 # o costo alto, probamos apidojo/tiktok-scraper.
 ACTOR = "clockworks/tiktok-profile-scraper"
+
+# Instagram: SOLO PERFIL (seguidores/posts), sin scraping de contenido.
+# Completa el diagnóstico de presencia digital a costo mínimo.
+ACTOR_IG = "apify/instagram-profile-scraper"
 
 # Tope duro para proteger la cuota de Apify (ver CLAUDE.md §12, Fase 7):
 # el fetch se niega a correr si hay más cuentas activas que esto.
@@ -54,6 +59,17 @@ def cargar_cuentas() -> list[str]:
         for f in filas
         if f["scrape"].strip().lower() == "si"
         and f["handle_tiktok"].strip() not in ("", "sin cuenta")
+    ]
+
+
+def cargar_cuentas_ig() -> list[str]:
+    """Handles de Instagram con valor en el CSV. Independiente del flag
+    `scrape` (que gobierna TikTok): un legislador sin TikTok puede tener IG."""
+    with open(RUTA_LEGISLADORES, encoding="utf-8") as f:
+        filas = list(csv.DictReader(f))
+    return [
+        h for f in filas
+        if (h := f.get("handle_instagram", "").strip()) not in ("", "sin cuenta")
     ]
 
 
@@ -80,13 +96,17 @@ def main() -> int:
               f"o sube MAX_CUENTAS en src/fetch.py de forma consciente.")
         return 1
 
+    cuentas_ig = cargar_cuentas_ig()
+
     # --- Guarda de costo: mostrar el plan y confirmar antes de gastar ---
     resultados_estimados = len(cuentas) * (1 + args.videos)
     print("Plan de la corrida:")
     print(f"  actor:    {ACTOR}")
     print(f"  cuentas:  {len(cuentas)} ({', '.join(cuentas)})")
     print(f"  videos:   hasta {args.videos} por cuenta")
-    print(f"  items estimados: ~{resultados_estimados} "
+    if cuentas_ig:
+        print(f"  instagram (solo perfil): {len(cuentas_ig)} cuentas via {ACTOR_IG}")
+    print(f"  items estimados: ~{resultados_estimados} TikTok + {len(cuentas_ig)} IG "
           "(el costo real se ve luego en Apify Console → Billing/Usage)")
     if not args.si:
         respuesta = input("¿Lanzar la corrida en Apify? Esto consume crédito. [s/N] ")
@@ -128,6 +148,24 @@ def main() -> int:
               f"{len(cuenta['videos'])} videos")
     for error in snapshot["errors"]:
         print(f"  [aviso] {error}")
+
+    # --- Instagram (solo perfil) — si falla, NO tumba la corrida TikTok ---
+    if cuentas_ig:
+        try:
+            print(f"\nInstagram: pidiendo {len(cuentas_ig)} perfiles...")
+            items_ig = correr_actor(ACTOR_IG, {"usernames": cuentas_ig}, token)
+            ruta_ig_raw = CARPETA_RAW / f"{marca}-ig-raw.json"
+            ruta_ig_raw.write_text(json.dumps(items_ig, ensure_ascii=False, indent=2),
+                                   encoding="utf-8")
+            snap_ig = normalizar_ig(items_ig, fecha_iso)
+            ruta_ig = guardar_snapshot(snap_ig, fecha_iso[:10], carpeta=CARPETA_IG)
+            print(f"[ok] snapshot Instagram: {ruta_ig.relative_to(ROOT)} "
+                  f"({len(snap_ig['profiles'])} perfiles)")
+            for error in snap_ig["errors"]:
+                print(f"  [aviso IG] {error}")
+        except (ApifyError, OSError) as e:
+            print(f"[aviso IG] la corrida de Instagram falló y se omite: {e}")
+
     return 0
 
 

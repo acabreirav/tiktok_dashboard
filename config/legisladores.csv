@@ -1,53 +1,53 @@
-nombre,cargo,territorio,partido,coalicion,sector,handle_tiktok,confianza_handle,scrape,notas
-Gonzalo Winter,diputado,D10,FA,Unidad por Chile,oposicion,gonzalowinter,validada,si,Ya monitoreado; handle verificado con fetch real
-Emilia Schneider,diputada,D10,FA,Unidad por Chile,oposicion,emiliaschneiderv,validada,si,Handle validado manualmente (2026-07-07)
-Lorena Fries,diputada,D10,FA,Unidad por Chile,oposicion,lorenafriesm,validada,si,Handle validado manualmente (2026-07-07)
-Iraci Hassler,diputada,D10,PC,Unidad por Chile,oposicion,iracihassler,validada,si,Handle validado manualmente (2026-07-07)
-Jorge Alessandri,diputado,D10,UDI,Chile Grande y Unido,gobierno,jorgealessandridiputado,validada,si,Handle validado manualmente (2026-07-07)
-Francisco Orrego,diputado,D10,RN,Chile Grande y Unido,gobierno,pancho.orregog,validada,si,Handle validado manualmente (2026-07-07)
-Jose Antonio Kast Adriasola,diputado,D10,REP,Cambio por Chile,gobierno,jakastadriasola,validada,si,Handle validado manualmente (2026-07-07)
-Hans Marowski,diputado,D10,PNL,Cambio por Chile,gobierno,hans_marowski,validada,si,Handle validado manualmente (2026-07-07)
-Constanza Schonhaut,diputada,D11,FA,Unidad por Chile,oposicion,conyschons,validada,si,Ya monitoreada; handle verificado con fetch real
-Diego Schalper,diputado,D11,RN,Chile Grande y Unido,gobierno,diegoschalper,validada,si,Handle validado manualmente (2026-07-07)
-Claudia Mora,diputada,D11,RN,Chile Grande y Unido,gobierno,claudiamoradistrito11,validada,si,Handle validado manualmente (2026-07-07)
-Constanza Hube,diputada,D11,UDI,Chile Grande y Unido,gobierno,conihube,validada,si,Handle validado manualmente (2026-07-07)
-Cristian Araya,diputado,D11,REP,Cambio por Chile,gobierno,cristianarayal,validada,si,Handle validado manualmente (2026-07-07)
-Catalina Del Real,diputada,D11,REP,Cambio por Chile,gobierno,catadelrealcl,validada,si,Handle validado manualmente (2026-07-07)
-Gael Yeomans,diputada,D13,FA,Unidad por Chile,oposicion,gaelyeomans,validada,si,Ya monitoreada; handle verificado con fetch real
-Lorena Pizarro,diputada,D13,PC,Unidad por Chile,oposicion,lorenapizarrosierra,validada,si,Handle validado manualmente (2026-07-07)
-Eduardo Duran,diputado,D13,RN,Chile Grande y Unido,gobierno,diputadoeduardoduran,validada,si,Handle validado manualmente (2026-07-07)
-Felipe Ross,diputado,D13,REP,Cambio por Chile,gobierno,feliperossco,validada,si,Handle validado manualmente (2026-07-07)
-Valentina Becerra,diputada,D13,REP,Cambio por Chile,gobierno,valebecerra.cl,validada,si,Handle validado manualmente (2026-07-07)
-Fabiola Campillai,senadora,RM,IND,independiente,oposicion,dignidadfabiola,validada,si,Handle validado manualmente (2026-07-07)
-Claudia Pascual,senadora,RM,PC,Unidad por Chile,oposicion,sin cuenta,-,no,Senadora 2022-2030; no se encontro cuenta propia
-Manuel Jose Ossandon,senador,RM,RN,Chile Grande y Unido,gobierno,manueljoseossandon,validada,si,Handle validado manualmente (2026-07-07)
-Luciano Cruz-Coke,senador,RM,Evopoli,Chile Grande y Unido,gobierno,lcruzcoke,validada,si,Handle validado manualmente (2026-07-07)
-Rojo Edwards,senador,RM,PSC,Cambio por Chile,gobierno,rojo.edwards,validada,si,Handle validado manualmente (2026-07-07)
-Gustavo Gatica,diputado,D8,PC,Unidad por Chile,oposicion,gustavogaticav,validada,si,Handle validado manualmente (2026-07-08)
-Marcos Barraza,diputado,D8,PC,Unidad por Chile,oposicion,sin cuenta,-,no,No se encontro cuenta propia (existe @marcosbarrazarojas pero parece otra persona)
-Tatiana Urrutia,diputada,D8,FA,Unidad por Chile,oposicion,tatiurru,validada,si,Handle validado manualmente (2026-07-08)
-Cristian Contreras,diputado,D8,PDG,PDG,neutro,cristiancontrerasradovic,validada,si,Handle validado manualmente (2026-07-08)
-Agustin Romero,diputado,D8,REP,Cambio por Chile,gobierno,agustinromerodiputado,validada,si,Handle validado manualmente (2026-07-08)
-Enrique Bassaletti,diputado,D8,REP,Cambio por Chile,gobierno,ebassaletti,validada,si,Handle validado manualmente (2026-07-08)
-Pier Karlezi,diputado,D8,PNL,Cambio por Chile,gobierno,pierkarlezinadietv,validada,si,Handle validado manualmente (2026-07-08)
-Mario Olavarria,diputado,D8,UDI,Chile Grande y Unido,gobierno,marioolavarriadiputadod8,validada,si,Handle validado manualmente (2026-07-08)
-Carlos Cuadrado,diputado,D9,PPD,Unidad por Chile,oposicion,carloscuadradoprats,validada,si,Handle validado manualmente (2026-07-08)
-Boris Barrera,diputado,D9,PC,Unidad por Chile,oposicion,diputadoborisbarrera_,validada,si,Handle validado manualmente (2026-07-08)
-Jose Carlos Meza,diputado,D9,REP,Cambio por Chile,gobierno,josemezapereira,validada,si,Handle validado manualmente (2026-07-08)
-Javiera Rodriguez,diputada,D9,REP,Cambio por Chile,gobierno,capitanarod,validada,si,Handle validado manualmente (2026-07-08)
-Tamara Ramirez,diputada,D9,PDG,PDG,neutro,tamaraa.ramirez,validada,si,Handle validado manualmente (2026-07-08)
-Cesar Valenzuela,diputado,D9,PS,Unidad por Chile,oposicion,diputadocesarvalenzuela,validada,si,Handle validado manualmente (2026-07-08)
-Guillermo Ramirez,diputado,D9,UDI,Chile Grande y Unido,gobierno,guillermoramirezdiputado,validada,si,Handle validado manualmente (2026-07-08)
-Pamela Jiles,diputada,D12,PDG,PDG,neutro,pamelajilestv,validada,si,Handle validado manualmente (2026-07-08)
-Ana Maria Gazmuri,diputada,D12,AH,Unidad por Chile,oposicion,anamariagazmuriv,validada,si,Handle validado manualmente (2026-07-08)
-Alvaro Carter,diputado,D12,REP,Cambio por Chile,gobierno,diputado_alvaro_carter,validada,si,Handle validado manualmente (2026-07-08)
-Ximena Ossandon,diputada,D12,RN,Chile Grande y Unido,gobierno,ximenaossandon.oficial,validada,si,Handle validado manualmente (2026-07-08)
-Daniela Serrano,diputada,D12,PC,Unidad por Chile,oposicion,danielaserranosalazar,validada,si,Handle validado manualmente (2026-07-08)
-Zandra Parisi,diputada,D12,PDG,PDG,neutro,_zandraparisi,validada,si,Handle validado manualmente (2026-07-08)
-Macarena Santelices,diputada,D12,REP,Cambio por Chile,gobierno,macasantelices,validada,si,Handle validado manualmente (2026-07-08)
-Raul Leiva,diputado,D14,PS,Unidad por Chile,oposicion,diputadoraulleiva,validada,si,Handle validado manualmente (2026-07-08)
-Marisela Santibanez,diputada,D14,PC,Unidad por Chile,oposicion,sin cuenta,-,no,Electa IND-PC; no se encontro cuenta propia
-Ignacio Achurra,diputado,D14,FA,Unidad por Chile,oposicion,ignacio.achurra,validada,si,Handle validado manualmente (2026-07-08)
-Jaime Coloma,diputado,D14,UDI,Chile Grande y Unido,gobierno,colomajaime,validada,si,Handle validado manualmente (2026-07-08)
-Juan Irarrazaval,diputado,D14,REP,Cambio por Chile,gobierno,juan.irarrzaval.r,validada,si,Handle validado manualmente (2026-07-08)
-Diego Vergara,diputado,D14,REP,Cambio por Chile,gobierno,diego_vergara_dip,validada,si,Handle validado manualmente (2026-07-08)
+nombre,cargo,territorio,partido,coalicion,sector,handle_tiktok,confianza_handle,scrape,notas,handle_instagram
+Gonzalo Winter,diputado,D10,FA,Unidad por Chile,oposicion,gonzalowinter,validada,si,Ya monitoreado; handle verificado con fetch real,
+Emilia Schneider,diputada,D10,FA,Unidad por Chile,oposicion,emiliaschneiderv,validada,si,Handle validado manualmente (2026-07-07),
+Lorena Fries,diputada,D10,FA,Unidad por Chile,oposicion,lorenafriesm,validada,si,Handle validado manualmente (2026-07-07),
+Iraci Hassler,diputada,D10,PC,Unidad por Chile,oposicion,iracihassler,validada,si,Handle validado manualmente (2026-07-07),
+Jorge Alessandri,diputado,D10,UDI,Chile Grande y Unido,gobierno,jorgealessandridiputado,validada,si,Handle validado manualmente (2026-07-07),
+Francisco Orrego,diputado,D10,RN,Chile Grande y Unido,gobierno,pancho.orregog,validada,si,Handle validado manualmente (2026-07-07),
+Jose Antonio Kast Adriasola,diputado,D10,REP,Cambio por Chile,gobierno,jakastadriasola,validada,si,Handle validado manualmente (2026-07-07),
+Hans Marowski,diputado,D10,PNL,Cambio por Chile,gobierno,hans_marowski,validada,si,Handle validado manualmente (2026-07-07),
+Constanza Schonhaut,diputada,D11,FA,Unidad por Chile,oposicion,conyschons,validada,si,Ya monitoreada; handle verificado con fetch real,
+Diego Schalper,diputado,D11,RN,Chile Grande y Unido,gobierno,diegoschalper,validada,si,Handle validado manualmente (2026-07-07),
+Claudia Mora,diputada,D11,RN,Chile Grande y Unido,gobierno,claudiamoradistrito11,validada,si,Handle validado manualmente (2026-07-07),
+Constanza Hube,diputada,D11,UDI,Chile Grande y Unido,gobierno,conihube,validada,si,Handle validado manualmente (2026-07-07),
+Cristian Araya,diputado,D11,REP,Cambio por Chile,gobierno,cristianarayal,validada,si,Handle validado manualmente (2026-07-07),
+Catalina Del Real,diputada,D11,REP,Cambio por Chile,gobierno,catadelrealcl,validada,si,Handle validado manualmente (2026-07-07),
+Gael Yeomans,diputada,D13,FA,Unidad por Chile,oposicion,gaelyeomans,validada,si,Ya monitoreada; handle verificado con fetch real,
+Lorena Pizarro,diputada,D13,PC,Unidad por Chile,oposicion,lorenapizarrosierra,validada,si,Handle validado manualmente (2026-07-07),
+Eduardo Duran,diputado,D13,RN,Chile Grande y Unido,gobierno,diputadoeduardoduran,validada,si,Handle validado manualmente (2026-07-07),
+Felipe Ross,diputado,D13,REP,Cambio por Chile,gobierno,feliperossco,validada,si,Handle validado manualmente (2026-07-07),
+Valentina Becerra,diputada,D13,REP,Cambio por Chile,gobierno,valebecerra.cl,validada,si,Handle validado manualmente (2026-07-07),
+Fabiola Campillai,senadora,RM,IND,independiente,oposicion,dignidadfabiola,validada,si,Handle validado manualmente (2026-07-07),
+Claudia Pascual,senadora,RM,PC,Unidad por Chile,oposicion,sin cuenta,-,no,Senadora 2022-2030; no se encontro cuenta propia,
+Manuel Jose Ossandon,senador,RM,RN,Chile Grande y Unido,gobierno,manueljoseossandon,validada,si,Handle validado manualmente (2026-07-07),
+Luciano Cruz-Coke,senador,RM,Evopoli,Chile Grande y Unido,gobierno,lcruzcoke,validada,si,Handle validado manualmente (2026-07-07),
+Rojo Edwards,senador,RM,PSC,Cambio por Chile,gobierno,rojo.edwards,validada,si,Handle validado manualmente (2026-07-07),
+Gustavo Gatica,diputado,D8,PC,Unidad por Chile,oposicion,gustavogaticav,validada,si,Handle validado manualmente (2026-07-08),
+Marcos Barraza,diputado,D8,PC,Unidad por Chile,oposicion,sin cuenta,-,no,No se encontro cuenta propia (existe @marcosbarrazarojas pero parece otra persona),
+Tatiana Urrutia,diputada,D8,FA,Unidad por Chile,oposicion,tatiurru,validada,si,Handle validado manualmente (2026-07-08),
+Cristian Contreras,diputado,D8,PDG,PDG,neutro,cristiancontrerasradovic,validada,si,Handle validado manualmente (2026-07-08),
+Agustin Romero,diputado,D8,REP,Cambio por Chile,gobierno,agustinromerodiputado,validada,si,Handle validado manualmente (2026-07-08),
+Enrique Bassaletti,diputado,D8,REP,Cambio por Chile,gobierno,ebassaletti,validada,si,Handle validado manualmente (2026-07-08),
+Pier Karlezi,diputado,D8,PNL,Cambio por Chile,gobierno,pierkarlezinadietv,validada,si,Handle validado manualmente (2026-07-08),
+Mario Olavarria,diputado,D8,UDI,Chile Grande y Unido,gobierno,marioolavarriadiputadod8,validada,si,Handle validado manualmente (2026-07-08),
+Carlos Cuadrado,diputado,D9,PPD,Unidad por Chile,oposicion,carloscuadradoprats,validada,si,Handle validado manualmente (2026-07-08),
+Boris Barrera,diputado,D9,PC,Unidad por Chile,oposicion,diputadoborisbarrera_,validada,si,Handle validado manualmente (2026-07-08),
+Jose Carlos Meza,diputado,D9,REP,Cambio por Chile,gobierno,josemezapereira,validada,si,Handle validado manualmente (2026-07-08),
+Javiera Rodriguez,diputada,D9,REP,Cambio por Chile,gobierno,capitanarod,validada,si,Handle validado manualmente (2026-07-08),
+Tamara Ramirez,diputada,D9,PDG,PDG,neutro,tamaraa.ramirez,validada,si,Handle validado manualmente (2026-07-08),
+Cesar Valenzuela,diputado,D9,PS,Unidad por Chile,oposicion,diputadocesarvalenzuela,validada,si,Handle validado manualmente (2026-07-08),
+Guillermo Ramirez,diputado,D9,UDI,Chile Grande y Unido,gobierno,guillermoramirezdiputado,validada,si,Handle validado manualmente (2026-07-08),
+Pamela Jiles,diputada,D12,PDG,PDG,neutro,pamelajilestv,validada,si,Handle validado manualmente (2026-07-08),
+Ana Maria Gazmuri,diputada,D12,AH,Unidad por Chile,oposicion,anamariagazmuriv,validada,si,Handle validado manualmente (2026-07-08),
+Alvaro Carter,diputado,D12,REP,Cambio por Chile,gobierno,diputado_alvaro_carter,validada,si,Handle validado manualmente (2026-07-08),
+Ximena Ossandon,diputada,D12,RN,Chile Grande y Unido,gobierno,ximenaossandon.oficial,validada,si,Handle validado manualmente (2026-07-08),
+Daniela Serrano,diputada,D12,PC,Unidad por Chile,oposicion,danielaserranosalazar,validada,si,Handle validado manualmente (2026-07-08),
+Zandra Parisi,diputada,D12,PDG,PDG,neutro,_zandraparisi,validada,si,Handle validado manualmente (2026-07-08),
+Macarena Santelices,diputada,D12,REP,Cambio por Chile,gobierno,macasantelices,validada,si,Handle validado manualmente (2026-07-08),
+Raul Leiva,diputado,D14,PS,Unidad por Chile,oposicion,diputadoraulleiva,validada,si,Handle validado manualmente (2026-07-08),
+Marisela Santibanez,diputada,D14,PC,Unidad por Chile,oposicion,sin cuenta,-,no,Electa IND-PC; no se encontro cuenta propia,
+Ignacio Achurra,diputado,D14,FA,Unidad por Chile,oposicion,ignacio.achurra,validada,si,Handle validado manualmente (2026-07-08),
+Jaime Coloma,diputado,D14,UDI,Chile Grande y Unido,gobierno,colomajaime,validada,si,Handle validado manualmente (2026-07-08),
+Juan Irarrazaval,diputado,D14,REP,Cambio por Chile,gobierno,juan.irarrzaval.r,validada,si,Handle validado manualmente (2026-07-08),
+Diego Vergara,diputado,D14,REP,Cambio por Chile,gobierno,diego_vergara_dip,validada,si,Handle validado manualmente (2026-07-08),
