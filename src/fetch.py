@@ -82,6 +82,12 @@ def main() -> int:
     parser.add_argument("--solo-ig", action="store_true",
                         help="solo perfiles de Instagram, sin corrida TikTok "
                              "(útil para tomar la primera foto IG sin costo extra)")
+    parser.add_argument("--timeout-run", type=int, default=1800,
+                        help="segundos que se le permite correr a CADA actor en "
+                             "Apify (default 1800 = 30 min)")
+    parser.add_argument("--poll", type=int, default=10,
+                        help="cada cuántos segundos se consulta el estado del run "
+                             "(default 10)")
     args = parser.parse_args()
 
     # Token desde .env (local). En GitHub Actions vendrá como variable de entorno.
@@ -121,48 +127,41 @@ def main() -> int:
     CARPETA_RAW.mkdir(parents=True, exist_ok=True)
     marca = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H%M")
     fecha_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    opciones_run = {"timeout_run_s": args.timeout_run, "poll_cada_s": args.poll}
+
+    # Cada red es un run INDEPENDIENTE: guarda su snapshot apenas termina y una
+    # falla no tumba a la otra. El código de salida refleja solo TikTok (la red
+    # prioritaria); IG es complementaria.
+    exito_tiktok = True
 
     if not args.solo_ig:
-        entrada = {
-            "profiles": cuentas,
-            "resultsPerPage": args.videos,
-        }
-
-        print("Llamando a Apify (puede tardar 1-3 minutos)...")
         try:
-            items = correr_actor(ACTOR, entrada, token)
-        except ApifyError as e:
-            print(f"[error] {e}")
-            return 1
+            print(f"TikTok: disparando {len(cuentas)} cuentas "
+                  f"(timeout run {args.timeout_run}s, polling cada {args.poll}s)...")
+            items = correr_actor(ACTOR, {"profiles": cuentas, "resultsPerPage": args.videos},
+                                 token, **opciones_run)
+            # crudo tal cual (encoding explícito: Windows usa cp1252 y los
+            # captions de TikTok traen emojis)
+            (CARPETA_RAW / f"{marca}-raw.json").write_text(
+                json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
+            snapshot = normalizar_items(items, fecha_iso)
+            ruta_snapshot = guardar_snapshot(snapshot, fecha_iso[:10])
+            print(f"[ok] {len(items)} items · snapshot TikTok: "
+                  f"{ruta_snapshot.relative_to(ROOT)}")
+            for error in snapshot["errors"]:
+                print(f"  [aviso] {error}")
+        except (ApifyError, OSError) as e:
+            print(f"[error TikTok] {e}")
+            exito_tiktok = False
 
-        # Guardar el crudo tal cual: un archivo por corrida, nunca se sobreescribe.
-        ruta_salida = CARPETA_RAW / f"{marca}-raw.json"
-        # encoding explícito: en Windows el default (cp1252) no soporta los emojis
-        # que traen los captions de TikTok
-        ruta_salida.write_text(json.dumps(items, ensure_ascii=False, indent=2),
-                               encoding="utf-8")
-
-        print(f"[ok] {len(items)} items crudos guardados en {ruta_salida.relative_to(ROOT)}")
-
-        # Normalizar al esquema interno y guardar el snapshot del día.
-        snapshot = normalizar_items(items, fecha_iso)
-        ruta_snapshot = guardar_snapshot(snapshot, fecha_iso[:10])
-
-        print(f"[ok] snapshot normalizado: {ruta_snapshot.relative_to(ROOT)}")
-        for cuenta in snapshot["accounts"]:
-            print(f"  @{cuenta['handle']}: {cuenta['followers']:,} seguidores, "
-                  f"{len(cuenta['videos'])} videos")
-        for error in snapshot["errors"]:
-            print(f"  [aviso] {error}")
-
-    # --- Instagram (solo perfil) — si falla, NO tumba la corrida TikTok ---
+    # --- Instagram (solo perfil) — run aparte; si falla, no afecta a TikTok ---
     if cuentas_ig:
         try:
-            print(f"\nInstagram: pidiendo {len(cuentas_ig)} perfiles...")
-            items_ig = correr_actor(ACTOR_IG, {"usernames": cuentas_ig}, token)
-            ruta_ig_raw = CARPETA_RAW / f"{marca}-ig-raw.json"
-            ruta_ig_raw.write_text(json.dumps(items_ig, ensure_ascii=False, indent=2),
-                                   encoding="utf-8")
+            print(f"\nInstagram: disparando {len(cuentas_ig)} perfiles...")
+            items_ig = correr_actor(ACTOR_IG, {"usernames": cuentas_ig},
+                                    token, **opciones_run)
+            (CARPETA_RAW / f"{marca}-ig-raw.json").write_text(
+                json.dumps(items_ig, ensure_ascii=False, indent=2), encoding="utf-8")
             snap_ig = normalizar_ig(items_ig, fecha_iso)
             ruta_ig = guardar_snapshot(snap_ig, fecha_iso[:10], carpeta=CARPETA_IG)
             print(f"[ok] snapshot Instagram: {ruta_ig.relative_to(ROOT)} "
@@ -172,7 +171,7 @@ def main() -> int:
         except (ApifyError, OSError) as e:
             print(f"[aviso IG] la corrida de Instagram falló y se omite: {e}")
 
-    return 0
+    return 0 if exito_tiktok else 1
 
 
 if __name__ == "__main__":
