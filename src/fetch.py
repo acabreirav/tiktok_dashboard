@@ -16,14 +16,29 @@ Guardas de costo:
 import argparse
 import csv
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 from dotenv import load_dotenv
 
-from apify_client import ApifyError, correr_actor
+from apify_client import ApifyCreditError, ApifyError, correr_actor
 from normalize import guardar_snapshot, normalizar_ig, normalizar_items
+
+
+def avisar_resumen(linea: str) -> None:
+    """Deja un aviso destacado en el resumen del run de GitHub Actions.
+
+    Escribe en $GITHUB_STEP_SUMMARY si existe (aparece en la UI del run);
+    en local es no-op. Así una corrida incompleta no pasa desapercibida."""
+    ruta = os.getenv("GITHUB_STEP_SUMMARY")
+    if ruta:
+        try:
+            with open(ruta, "a", encoding="utf-8") as f:
+                f.write(linea + "\n")
+        except OSError:
+            pass
 
 ROOT = Path(__file__).resolve().parent.parent
 RUTA_LEGISLADORES = ROOT / "config" / "legisladores.csv"
@@ -92,7 +107,6 @@ def main() -> int:
 
     # Token desde .env (local). En GitHub Actions vendrá como variable de entorno.
     load_dotenv(ROOT / ".env")
-    import os
     token = os.getenv("APIFY_TOKEN")
     if not token:
         print("[error] No hay APIFY_TOKEN. Copia .env.example a .env y pega tu token.")
@@ -146,12 +160,32 @@ def main() -> int:
                 json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
             snapshot = normalizar_items(items, fecha_iso)
             ruta_snapshot = guardar_snapshot(snapshot, fecha_iso[:10])
-            print(f"[ok] {len(items)} items · snapshot TikTok: "
-                  f"{ruta_snapshot.relative_to(ROOT)}")
+            # GUARDA DE COMPLETITUD: dejar constancia explícita de pedidas/traídas.
+            traidas = len(snapshot["accounts"])
+            print(f"[ok] snapshot TikTok: {ruta_snapshot.relative_to(ROOT)}")
+            print(f"  cuentas pedidas: {len(cuentas)} / traídas: {traidas}")
             for error in snapshot["errors"]:
                 print(f"  [aviso] {error}")
+            if traidas < len(cuentas):
+                faltan = len(cuentas) - traidas
+                # ::error:: crea una anotación roja en el run; el exit≠0 hace fallar
+                # el job → el workflow NO commitea el snapshot cojo en verde.
+                print(f"::error::TikTok INCOMPLETO: {traidas}/{len(cuentas)} cuentas "
+                      f"({faltan} faltan). Un snapshot parcial es un hueco irrecuperable "
+                      f"en la serie — no se da por bueno. Causa típica: crédito Apify "
+                      f"agotado a mitad del run. Revisa saldo y relanza.")
+                avisar_resumen(f"❌ **TikTok incompleto:** {traidas}/{len(cuentas)} cuentas "
+                               f"({faltan} faltan). Snapshot NO commiteado.")
+                exito_tiktok = False
+            else:
+                avisar_resumen(f"✅ **TikTok completo:** {traidas}/{len(cuentas)} cuentas.")
+        except ApifyCreditError as e:
+            print(f"::error::sin crédito Apify — corrida TikTok omitida ({e})")
+            avisar_resumen("❌ **TikTok omitido: sin crédito Apify.** Recarga saldo y relanza.")
+            exito_tiktok = False
         except (ApifyError, OSError) as e:
             print(f"[error TikTok] {e}")
+            avisar_resumen(f"❌ **TikTok falló:** {e}")
             exito_tiktok = False
 
     # --- Instagram (solo perfil) — run aparte; si falla, no afecta a TikTok ---
@@ -164,12 +198,25 @@ def main() -> int:
                 json.dumps(items_ig, ensure_ascii=False, indent=2), encoding="utf-8")
             snap_ig = normalizar_ig(items_ig, fecha_iso)
             ruta_ig = guardar_snapshot(snap_ig, fecha_iso[:10], carpeta=CARPETA_IG)
-            print(f"[ok] snapshot Instagram: {ruta_ig.relative_to(ROOT)} "
-                  f"({len(snap_ig['profiles'])} perfiles)")
+            traidas_ig = len(snap_ig["profiles"])
+            print(f"[ok] snapshot Instagram: {ruta_ig.relative_to(ROOT)}")
+            print(f"  perfiles pedidos: {len(cuentas_ig)} / traídos: {traidas_ig}")
             for error in snap_ig["errors"]:
                 print(f"  [aviso IG] {error}")
+            # IG es complementaria: su incompletitud avisa pero NO tumba el job.
+            if traidas_ig < len(cuentas_ig):
+                faltan = len(cuentas_ig) - traidas_ig
+                print(f"::warning::Instagram INCOMPLETO: {traidas_ig}/{len(cuentas_ig)} "
+                      f"perfiles ({faltan} faltan).")
+                avisar_resumen(f"⚠️ **Instagram incompleto:** {traidas_ig}/{len(cuentas_ig)} perfiles.")
+            else:
+                avisar_resumen(f"✅ **Instagram completo:** {traidas_ig}/{len(cuentas_ig)} perfiles.")
+        except ApifyCreditError as e:
+            print(f"::warning::sin crédito Apify — corrida Instagram omitida ({e})")
+            avisar_resumen("⚠️ **Instagram omitido: sin crédito Apify.**")
         except (ApifyError, OSError) as e:
-            print(f"[aviso IG] la corrida de Instagram falló y se omite: {e}")
+            print(f"::warning::la corrida de Instagram falló y se omite: {e}")
+            avisar_resumen(f"⚠️ **Instagram falló:** {e}")
 
     return 0 if exito_tiktok else 1
 

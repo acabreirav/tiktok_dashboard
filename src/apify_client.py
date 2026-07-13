@@ -25,6 +25,20 @@ class ApifyError(RuntimeError):
     """Error al hablar con Apify (token inválido, run fallido/colgado, etc.)."""
 
 
+class ApifyCreditError(ApifyError):
+    """Apify rechazó el run por falta de crédito (HTTP 402 /
+    not-enough-usage-to-run-paid-actor). Se distingue de un fallo genérico
+    del actor: NO es un bug, es que se acabó el saldo."""
+
+
+def _tipo_error(resp) -> str:
+    """Tipo de error que reporta Apify en el cuerpo JSON (o "" si no hay)."""
+    try:
+        return resp.json().get("error", {}).get("type", "")
+    except (ValueError, AttributeError):
+        return ""
+
+
 def correr_actor(
     actor: str,
     entrada: dict,
@@ -54,6 +68,9 @@ def correr_actor(
         )
     except requests.RequestException as e:
         raise ApifyError(f"No se pudo iniciar el actor {actor}: {e}") from e
+    if r.status_code == 402 or _tipo_error(r) == "not-enough-usage-to-run-paid-actor":
+        raise ApifyCreditError(
+            "sin crédito Apify (not-enough-usage-to-run-paid-actor / HTTP 402)")
     if r.status_code not in (200, 201):
         raise ApifyError(f"Apify rechazó el inicio ({r.status_code}): {r.text[:400]}")
 

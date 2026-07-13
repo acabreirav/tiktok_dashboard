@@ -10,7 +10,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 import apify_client
-from apify_client import ApifyError, correr_actor
+from apify_client import ApifyCreditError, ApifyError, correr_actor
 
 
 def _resp(payload, status=200):
@@ -53,6 +53,18 @@ def test_estado_timed_out_levanta_error_con_dataset():
         with pytest.raises(ApifyError) as exc:
             correr_actor("x/y", {}, "TOKEN", timeout_run_s=100, poll_cada_s=5)
     assert "TIMED-OUT" in str(exc.value) and "ds9" in str(exc.value)
+
+
+def test_402_sin_credito_levanta_error_de_credito():
+    # Apify rechaza el inicio con 402 + tipo not-enough-usage-to-run-paid-actor
+    rechazo = _resp({"error": {"type": "not-enough-usage-to-run-paid-actor",
+                               "message": "..."}}, status=402)
+    rechazo.text = "not enough usage"
+    with patch("apify_client.requests.post", return_value=rechazo):
+        with pytest.raises(ApifyCreditError):
+            correr_actor("x/y", {}, "TOKEN")
+    # ApifyCreditError es un ApifyError: el caller puede atrapar ambos
+    assert issubclass(ApifyCreditError, ApifyError)
 
 
 def test_script_se_rinde_si_el_run_nunca_termina():
